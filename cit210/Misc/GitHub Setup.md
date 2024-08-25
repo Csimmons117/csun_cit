@@ -33,7 +33,7 @@ When you get the ssh link from GitHub website you want to open your git terminal
   
   
 
-<img src="./Pictures/git-clone.png">test</img>
+<img src="../Pictures/git-clone.png">test</img>
 
   
   
