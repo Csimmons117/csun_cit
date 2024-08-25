@@ -17,7 +17,7 @@ You are going to the home page for with lab repository and get the ssh link, ple
 
   
 
-<img src="./Pictures/ssh.jpg">
+<img src="../Pictures/ssh.jpg">
 
   
   
