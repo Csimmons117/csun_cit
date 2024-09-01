@@ -17,7 +17,7 @@ You are going to the home page for with lab repository and get the ssh link, ple
 
   
 
-![ssh picture](Pictures/ssh.jpg)
+<img src="../Pictures/ssh.jpg">
 
   
   
@@ -33,7 +33,7 @@ When you get the ssh link from GitHub website you want to open your git terminal
   
   
 
-![git-clo](Pictures/git-clone.png)
+<img src="../Pictures/git-clone.png">test</img>
 
   
   
