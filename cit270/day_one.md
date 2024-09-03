@@ -1,6 +1,6 @@
 # Computer Information Technology 270
 
-    > This is what I could remember on the first day for the first day
+> This is what I could remember on the first day for the first day
 
 1. Create a domain
 1. Link domain to AWS class account
