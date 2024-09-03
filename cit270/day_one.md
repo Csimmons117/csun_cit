@@ -75,7 +75,7 @@
 2. Open powershell to the file with the key
 > For this example I have moved my key to a directory to awscit270
 
-'''markdown 
+```markdown 
 
 Windows PowerShell
 Copyright (C) Microsoft Corporation. All rights reserved.
@@ -83,14 +83,23 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
 
 PS C:\Users\NightShrowd> cd .\awscit270\
+PS C:\Users\NightShrowd\awscit270> ls
 
-'''
+
+    Directory: C:\Users\NightShrowd\awscit270
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         8/30/2024  10:12 PM           1678 labsuser.pem
+
+```
 
 
 > Here we are in the file with the key
 
 3. Now type the command:
-'''markdown
+```markdown
 
 PS C:\Users\NightShrowd\awscit270> ssh user@<PUBLIC IP-DNS> -i .\labsuser.pem
 The authenticity of host '<PUBLIC IP-DNS>' can't be established.
@@ -103,6 +112,6 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 Warning: Permanently added '<PUBLIC IP>' (ED25519) to the list of known hosts.
 user@<PUBLIC IP-DNS>: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
 PS C:\Users\NightShrowd\awscit270>
-'''
+```
 
 > This is good, even though I didn't get into the instance this shows that the machine is running when I **Permission denied**.
