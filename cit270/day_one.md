@@ -67,5 +67,47 @@
     **CHECK THE BOX**Allow HTTP traffic from the internet
 6. **Launch instance**
 
-### I couldn't move forward I was trying to download my keypair.pem again but I think you only get one download to next friday or weekend I will try to add more.
+> Still cant remember how to download the key for this class but i wil ask he on Friday to show us.
+> The key I will use in this example is one I sent to myself from class.
 
+## SSH into you machine to see if it up and running.
+1. Locate and download your key for class as a pem file. The key is called **labsuser**.
+2. Open powershell to the file with the key
+> For this example I have moved my key to a directory to awscit270
+
+'''markdown
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\NightShrowd> cd .\awscit270\
+PS C:\Users\NightShrowd\awscit270> ls
+
+
+    Directory: C:\Users\NightShrowd\awscit270
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         8/30/2024  10:12 PM           1678 labsuser.pem
+
+'''
+> Here we are in the file with the key
+3. Now type the command:
+'''markdown
+
+PS C:\Users\NightShrowd\awscit270> ssh user@<PUBLIC IP-DNS> -i .\labsuser.pem
+The authenticity of host '<PUBLIC IP-DNS>' can't be established.
+
+This host key is known by the following other names/addresses:
+
+    C:\Users\NightShrowd/.ssh/known_hosts:5: <Your own IP>
+
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '<PUBLIC IP>' (ED25519) to the list of known hosts.
+user@<PUBLIC IP-DNS>: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
+PS C:\Users\NightShrowd\awscit270>
+'''
+
+> This is good, even though I didn't get into the instance this shows that the machine is running when I **Permission denied**.
