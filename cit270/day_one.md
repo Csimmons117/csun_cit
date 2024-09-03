@@ -76,6 +76,7 @@
 > For this example I have moved my key to a directory to awscit270
 
 '''java 
+
 Windows PowerShell
 Copyright (C) Microsoft Corporation. All rights reserved.
 
@@ -93,7 +94,10 @@ Mode                 LastWriteTime         Length Name
 -a----         8/30/2024  10:12 PM           1678 labsuser.pem
 
 '''
+
+
 > Here we are in the file with the key
+
 3. Now type the command:
 '''markdown
 
