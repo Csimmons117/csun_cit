@@ -75,7 +75,7 @@
 2. Open powershell to the file with the key
 > For this example I have moved my key to a directory to awscit270
 
-'''java 
+'''markdown 
 
 Windows PowerShell
 Copyright (C) Microsoft Corporation. All rights reserved.
@@ -83,15 +83,6 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
 
 PS C:\Users\NightShrowd> cd .\awscit270\
-PS C:\Users\NightShrowd\awscit270> ls
-
-
-    Directory: C:\Users\NightShrowd\awscit270
-
-
-Mode                 LastWriteTime         Length Name
-----                 -------------         ------ ----
--a----         8/30/2024  10:12 PM           1678 labsuser.pem
 
 '''
 
