@@ -75,7 +75,7 @@
 2. Open powershell to the file with the key
 > For this example I have moved my key to a directory to awscit270
 
-'''markdown
+'''java 
 Windows PowerShell
 Copyright (C) Microsoft Corporation. All rights reserved.
 
