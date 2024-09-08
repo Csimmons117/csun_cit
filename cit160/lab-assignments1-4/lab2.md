@@ -1,4 +1,4 @@
-### Setting up the computers
+### Setting up Windows
 
 Setup the pod computers, two Windows 10 desktops, and one Windows Server 2019. Configure Active Directory, DNS, DHCP, and two of the following (File and Storage Services, Web Server IIS, Print and Document Services, Windows Server Update Services, Volume Activation Services, Remote Desktop Services, Remote Access, Hyper-V, and/or Host Guardian Service). Create multiple user types and share different files on each type and change the windows background depending on the user type.
 
