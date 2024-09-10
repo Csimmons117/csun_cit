@@ -1,1 +1,0 @@
-### If you cant pass Computer Information Technology 101 by yourself change your degree now.
