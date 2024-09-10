@@ -33,16 +33,16 @@
 #### OSI Model vs (Hybrid) TCP/IP Model
 The OSI seven-layer model The TCP/IP Model
 
-| OSI | TCP/IP |
-|-----|--------|
-| Applicatiion | Application |
-| Presentation | -           |
-| Session      | -           |
-| Transport    | Transport   |
-| Network      | Network     |
-| Data link    | Data link   |
-| Physical     | Physical    |
-------------------------------
+| OSI | TCP/IP |PDU|
+|-----|--------|-------------|                 |
+| Applicatiion | Application | Data or message |
+| Presentation | -           |                 |
+| Session      | -           |                 |
+| Transport    | Transport   |  Segment        |
+| Network      | Network     |  Packet         |
+| Data link    | Data link   |  Frame          |
+| Physical     | Physical    |  Bit            |
+------------------------------------------------
 - All People Seem To Need Data Processing
 - Please Do Not Throw Sausage Pizza Away
 
