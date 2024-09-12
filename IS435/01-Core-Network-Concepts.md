@@ -75,9 +75,7 @@
 4. Client/Server Application: Webservice
 - Server hosts provide services to client hosts
 
-|----------------------------------------------------------------------|
-|(Clinet host HTTP Request Message ----->[Hypertext Transfer Protocol])|
-|(Server Program **Webserver** HTTP response Message <-------[The Requested File ])|
-------------------------------------------------------------------------------------
 
+(Clinet host HTTP Request Message ----->[Hypertext Transfer Protocol])
+(Server Program **Webserver** HTTP response Message <-------[The Requested File ])
 
