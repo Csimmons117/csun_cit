@@ -80,3 +80,52 @@
 																	   
 (Server Program **Webserver** HTTP response Message <-------[The Requested File ])
 ```
+5. Various Applications and Protocols
+- Not Always Browsers and Webservers
+```markdown
+(Clinet program(Client Host) (Excel) ---------> [ODBC query message])
+
+(Server Program (Server Host)  <--------------[ODBC REsponse message (Table)])
+```
+- The client is not always a browser!
+- The server is not always a webserver!
+- The communication standard is not always HTTP!
+- Don't confuse specific examples with general concepts
+	- DBMS (Database management system)
+	- ODBC (Open database connectivity protocol)
+#### Inside the Internet
+
+1. Data link
+- A data link is the transmission path of an IP packet between two routers or a host to a router.
+
+2. Internet Process: Data Link
+- Hop-by-Hop (Host-Router or Router-Router)
+- Packet organization and forwarding
+3. Route
+- The route is the packet's entire path between the source host and the destination host.
+
+4. Transport Process: Route
+- End-to-End (Host-to-Host)
+- Error correction, packet sequencing, and congestion control with TCP
+
+5. Routing (Router Forwarding)
+- A router's process for forwarding packets is called routing.
+- A router's forwarding decision is called a routing decision.
+
+6. Router and Routing
+- When a host transmits a packet, a router receives the arriving packet and forwards it to another router.
+- A router must send it to a router closer (or low-cost, depending on the
+quality agreement) to the destination host.
+- Routers use a packet's IP destination addresses to deliver the packet
+to its destination.
+- A router's process for forwarding packets is called **routing**.
+- A router's forwarding decision is called a **routing decision**.
+
+7. Point-to-Point Single Network
+- A single network is a network that uses a single set of standards for all devices.
+- If one host is on one single network and another is on a single network of a different type, they cannot communicate.
+- The point-to-point network is the direct physical connection defined by a physical standard.
+
+
+
+
