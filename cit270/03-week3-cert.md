@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-### Setting up website certificate 
+## Setting up website certificate 
 
 
 ### Check list:
