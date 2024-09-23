@@ -240,7 +240,7 @@ If you like Certbot, please consider supporting our work by:
 
 6. You are done.
 
-#### This was an end of class special ↓
+## This was an end of class special ↓
 ### Launch windows instance
 1. Create a new instance in EC2
 2. Name is something you can tell your linux machine from your windows
