@@ -35,7 +35,12 @@ Created symlink /etc/systemd/system/multi-user.target.wants/httpd.service → /u
 PowerShell 7.4.5                                                                                                        
 PS C:\Users\css17767> cd .\Downloads\                                                                                   
 PS C:\Users\css17767\Downloads> ls                                                                                                                                                                                                                  
-Directory: C:\Users\css17767\Downloads                                                                                                                  Name                                                                  Mode                 LastWriteTime         Length ----                                                                  ----                 -------------         ------ index.php                                                             -a---           9/14/2024  9:39 AM           1825         labsuser.pem                                                          -a---           8/24/2024 11:23 AM          11678         webserver.conf                                                        -a---           9/14/2024  9:45 AM            103                                 
+Directory: C:\Users\css17767\Downloads                                                                                                                  
+Name                       Mode                 LastWriteTime         Length 
+----                       ----                 -------------         ------ 
+index.php                  -a---           9/14/2024  9:39 AM           1825         
+labsuser.pem               -a---           8/24/2024 11:23 AM          11678         
+webserver.conf             -a---           9/14/2024  9:45 AM            103                                 
 
 ------------------------------------------------------------------------------------------------------------------------- 
 ```
@@ -43,7 +48,8 @@ Directory: C:\Users\css17767\Downloads                                          
 3. Use the command below and hit enter:
 
 ```markdown                                            
-PS C:\Users\css17767\Downloads> scp -i .\labsuser.pem .\webserver.conf ec2-user@citclassproject.com:                    webserver.conf                                                                        100%  103     1.4KB/s   00:00     
+PS C:\Users\css17767\Downloads> scp -i .\labsuser.pem .\webserver.conf ec2-user@citclassproject.com:                    
+webserver.conf                                                                        100%  103     1.4KB/s   00:00     
 PS C:\Users\css17767\Downloads>
 ```
 <img src="./pictures/movefile.png" width=600px>
