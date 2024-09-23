@@ -87,7 +87,6 @@ Install  13 Packages                                                            
 Installed size: 9.0 M                                                                                                 
 Is this ok [y/N]: N                                                                                                   
 Operation aborted.                                                                                                    
->>>>>>> dbe2ce55e8e5956f30056ad5702d8d23d3a947fa
 [ec2-user@ip-172-31-29-159 conf.d]$ sudo dnf install certbot certbot-apache                                           
 Last metadata expiration check: 1:07:06 ago on Sat Sep 14 16:00:13 2024.                                              
 Dependencies resolved.                                                                                                ====================================================================================================================== 
