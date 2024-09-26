@@ -91,5 +91,34 @@ Summary Matched: mariadb
 ==========================================================================================================
 mysql-selinux.noarch : SELinux policy modules for MySQL and MariaDB packages
 [ec2-user@ip-172-31-29-159 ~]$ 
+[ec2-user@ip-172-31-29-159 ~]$ sudo dnf install mariadb105
+Last metadata expiration check: 1:01:12 ago on Sat Sep 21 15:58:12 2024
+Dependencies resolved.   
+Install  5 Packages
+Total download size: 1.8 M 
+Installed size: 19 M 
+Is this ok [y/N]: y
+-------------------------------------------------------------------------------------------------------
+Installed:                                                                                                                                                               mariadb-connector-c-3.1.13-1.amzn2023.0.3.x86_64          
+mariadb-connector-c-config-3.1.13-1.amzn2023.0.3.noarch          
+mariadb105-3:10.5.25-1.amzn2023.0.1.x86_64         
+mariadb105-common-3:10.5.25-1.amzn2023.0.1.x86_64             
+perl-Sys-Hostname-1.23-477.amzn2023.0.6.x86_64 
+Complete! 
+-------------------------------------------------------------------------------------------------------
+[ec2-user@ip-172-31-29-159 ~]$ 
+[ec2-user@ip-172-31-29-159 ~]$ mysql  
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2)
+[ec2-user@ip-172-31-29-159 ~]$ 
 
+[ec2-user@ip-172-31-29-159 ~]$ mysql -h cam-database-01.cilhjhhs7vpq.us-east-1.rds.amazonaws.com -u admin -P 
+mysql: option '-P' requires an argument 
+[ec2-user@ip-172-31-29-159 ~]$ mysql -h cam-database-01.cilhjhhs7vpq.us-east-1.rds.amazonaws.com -u admin -p 
+Enter password: 
+ Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 92
+Server version: 10.11.8-MariaDB-log managed by https://aws.amazon.com/rds/ 
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others. 
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
+MariaDB [(none)]> 
