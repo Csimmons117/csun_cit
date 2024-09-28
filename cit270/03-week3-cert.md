@@ -282,4 +282,35 @@ If you like Certbot, please consider supporting our work by:
 <img src="./pictures/windowsup.png" width=600px>
 <br> 
 
+### Delete your windows instance 
+1. Login to the AWS Canvas 
+2. Go to the Learners Lab where you AWS machine is running.
+3. You should see the linux terminal on the page
+4. Now go to EC2 page and get the instance-ID of your windows instance
+5. type this command in aws ec2 terminate-instances --instance-ids <your instance ID>
+6. This will terminate your machine.
+```
+eee_W_3452129@runweb135550:~$ ls
+eee_W_3452129@runweb135550:~$ aws ec2 terminate-instances --instance-ids i-08a749801bb750d0a
+
+
+{
+    "TerminatingInstances": [
+        {
+            "CurrentState": {
+                "Code": 32,
+                "Name": "shutting-down"
+            },
+            "InstanceId": "i-08a749801bb750d0a",
+            "PreviousState": {
+                "Code": 16,
+                "Name": "running"
+            }
+        }
+    ]
+}
+eee_W_3452129@runweb135550:~$ 
+
+```
+
 > End of lab 9/14/2024
