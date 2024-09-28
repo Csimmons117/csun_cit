@@ -138,6 +138,8 @@ total 0
 15. rmdir phpMyAdmin-5.2.1-english/
 16. Refresh your website
 17. Welcome to phpMyAdmin
-# **Make sure to stop the RDS database you created or you will be charged money!!**
+
+# **Make sure to stop the RDS database you created when finished or you will be charged money!!**
 # After seven days it will turn back on just turn it back off
+
 ### Had an error with login in will go over in 05.md file
