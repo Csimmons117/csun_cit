@@ -129,15 +129,15 @@ drwxr-xr-x. 28 ec2-user ec2-user  16384 Feb  7  2023 vendor
 total 0           
 [ec2-user@ip-172-31-29-159 ~]$
 ```
-9. cd /var/www/html/
-10. cd phpMyAdmin-5.2.1-english
-11. mv * ..
-12. ls -a
-13. mv .* ..
-14. cd ..
-15. rmdir phpMyAdmin-5.2.1-english/
-16. Refresh your website
-17. Welcome to phpMyAdmin
+9.  ```cd /var/www/html/```
+10. ```cd phpMyAdmin-5.2.1-english```
+11. ```mv * ..```
+12. ```ls -a```
+13. ```mv .* ..```
+14. ```cd ..```
+15. ```rmdir phpMyAdmin-5.2.1-english/```
+16. ```Refresh your website```
+17. ```Welcome to phpMyAdmin```
 
 # **Make sure to stop the RDS database you created when finished or you will be charged money!!**
 # After seven days it will turn back on just turn it back off
