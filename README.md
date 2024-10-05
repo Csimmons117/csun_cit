@@ -1,9 +1,8 @@
 # Computer Information Technology
 
 > [!WARNING]
-> Urgent<br>
 > Content that you see here might not be up to date.<br>
-> Please note , these are the notes for me to look back on. If I need a refresher on what I worked on in class.
+> Please note , these are the notes for me to look back on.
 
 <ul>
   <li>Introduction</li>
