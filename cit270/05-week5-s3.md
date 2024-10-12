@@ -9,7 +9,7 @@
 6. Click the down arrow and select pre made key
 7. Click "Create Bucket"
 
-<!-- This is to back up files
+> This is to back up files
 8. Click name on the bucket
 9. Click Objects
 10. Click upload
@@ -25,7 +25,7 @@
 20. See results next week
 This is to back up files-->
 
-<!--#### Lifecycle Rules
+#### Lifecycle Rules
 1. Click on Management 
 2. Click "Create lifecycle rule"
 3. Lifecycle rule name: "Move to Glacier"
@@ -35,9 +35,9 @@ This is to back up files-->
 7. Scroll down to Transition current versions of objects between storages classes
 8. Under Days after object creation: 1
 9. Create rule
-Large file will move to glacier-->
+Large file will move to glacier
 
-<!--#### Static website on Amazon S3
+#### Static website on Amazon S3
 1. (google)[https://docs.aws.amazon.com/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html] 
 2. Open a Route 53 tab
 3. Click Create record
