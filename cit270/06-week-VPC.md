@@ -47,7 +47,7 @@
 4. Click on "Edit route"
 <br>
 <img src="./pictures/route.png "width="600px" >
-<br>
+
 
 
 5. Click on "Add route"
