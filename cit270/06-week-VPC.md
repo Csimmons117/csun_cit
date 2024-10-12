@@ -11,7 +11,7 @@
 5. Move to IPv6 CIDR block click: Amazon-provided IPv6 CIDR block
 6. Finally click "Create VPC"
 <br>
-<!--
+
 #### Creating a subnet for VPC
 1. Click "Create Subnet"
 2. Select the vpc you created example mine: 10.10.0.0/16
@@ -90,7 +90,7 @@
 8. Once in type "ls"*Here you should see the labuser.pem file*
 9. Next type chmod 400 labuser.pem and enter
 10. Finally ssh into your vpc-lan instance
--->
+
 *The below code block shows you that im signing into my aws linux wan instance then from there I can ssh into my private network. I don't know if it looks right but I hope you get the idea*
 ```
 PS C:\Users\css17767\Downloads> ssh ec2-user@44.204.121.144 -i .\labsuser.pem
