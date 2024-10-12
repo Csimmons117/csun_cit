@@ -38,7 +38,7 @@ This is to back up files-->
 Large file will move to glacier
 
 #### Static website on Amazon S3
-1. (google)[https://docs.aws.amazon.com/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html] 
+1. [google](https://docs.aws.amazon.com/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html) 
 2. Open a Route 53 tab
 3. Click Create record
 4. Name: S3-test
