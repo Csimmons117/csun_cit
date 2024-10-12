@@ -26,6 +26,7 @@
 10. Click edit subnet settings
 11. Check "Enable auto assign public IPv4 address" for these three subnets
 12. Then click save
+
 #### Creating a internat gateway
 1. Click "Create internet gateway"
 2. Name: vpc-test-gateway
@@ -38,6 +39,8 @@
 *Here we need to finalize the connection to are gateway*
 <br>
 <img src="./pictures/missing.png" width="600px"  >
+
+
 1. Click on "Your VPC"
 2. Click on "You VPC you made"
 3. Click on "The Route tables"
@@ -45,12 +48,16 @@
 <br>
 <img src="./pictures/route.png "width="600px" >
 <br>
+
+
 5. Click on "Add route"
 6. Click the first one "0.0.0.0/0"
 7. Click the bar next to it on right and select "Internet gateway"
 8. Under that click bar and select "internet gateway"
 9. Save change
 <img src="./pictures/sub-route-gateway.PNG" width="600px" >
+
+
 #### Setting up Bastion Host
 *Here we will use one instance to connect to are private network instance*
 1. Open EC2
@@ -66,6 +73,7 @@
 10. Scroll down a little and click on "Source Type": **My IP**
 11. Launch Instance
 *If you have two ip addresses one public, one private and can ping "google" move on to setting up the second machine*
+
 #### Setting up Private subnet
 1. Open EC2
 2. Create an instance 
@@ -79,6 +87,8 @@
 9. Security Group Name: vpc-wan-test
 10. Scroll down a little and click on "Source Type": **Anywhere**
 11. Launch Instance
+
+
 #### Coping Over Key for instance
 1. Open powershell in windows
 2. cd Downloads
