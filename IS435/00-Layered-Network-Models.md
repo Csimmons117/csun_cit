@@ -33,7 +33,7 @@
 #### OSI Model vs (Hybrid) TCP/IP Model
 The OSI seven-layer model The TCP/IP Model
 
-| OSI | TCP/IP |PDU          |                 |
+| OSI | TCP/IP |PDU                          
 |-----|--------|-------------|-----------------|
 | Applicatiion | Application | Data or message |
 | Presentation | -           |                 |
