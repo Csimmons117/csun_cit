@@ -10,6 +10,7 @@ https://www.networkstraining.com/basic-cisco-switch-configuration/Links to an ex
 https://www.youtube.com/watch?v=7dXBN8a-X2U
 
 ### Cisco switch config file
+#### Setting up the password
 ```
 switch>
 switch>enable
@@ -20,10 +21,20 @@ switch(config)#hostname test-switch
 test-switch(config)#
 test-switch(config)#enable password id10t
 test-switch(config)#
-test-switch(config)#
-
-
-
-
-
+test-switch(config)#exit
+test-switch#exit
 ```
+#### Create a vlan
+```
+test-switch>
+test-switch>enable
+password:
+test-switch#
+test-switch#
+test-switch# conf t
+test-switch(config)# vlan 10
+test-switch(config-vlan)#name IT
+test-switch(config-vlan)#exit
+```
+  
+
