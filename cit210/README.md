@@ -1,4 +1,4 @@
-# CSUN_CIT210
+# Deploy & Manage Operating Systems
 
 > [!IMPORTANT]
 > Please make sure to read the whole document before continuing.
