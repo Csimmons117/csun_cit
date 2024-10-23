@@ -8,9 +8,11 @@
 
 > [!IMPORTANT]
 > Before moving forward make sure you can connect to both VPC instance you created. You can do this my connecting to the one that has a public IP once inside the machine try connecting to the second one.
+> 
 > Please note B is public and A is a private network only can access through B (Think of this as a bastion host)
 > 
 > **First machine B** ``` ssh ec2-user@PublicIP -i .\labsuser.pem ```
+> 
 > **Second machine A** ```ssh -i ./labsuser.pem PrivateIP ```
 
 #### Create a NAT gateway
