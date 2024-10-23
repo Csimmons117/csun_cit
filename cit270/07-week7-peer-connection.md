@@ -1,6 +1,6 @@
 ### Create a peer connection
 
-<img src="./pictures/peering_conection" width="400px">
+<img src="./pictures/peering_conection.png" width="400px">
 <br>
 
 > [!CAUTION]
