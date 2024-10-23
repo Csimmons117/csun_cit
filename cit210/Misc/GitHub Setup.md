@@ -13,7 +13,7 @@ This GitHub project is for helping our team foster better communication through 
 
 Now that you have done all that you are ready to have some fun.
 
-You are going to the home page for with lab repository and get the ssh link, please note the this is just a picture on where to look and not the link to the link for the repo.
+You are going to the home page for the lab repository and get the ssh link, please note the this is just a picture on where to look and not the link to the link for the repo.
 
   
 
