@@ -1,13 +1,12 @@
 # Computer Information Technology
 
-> [!WARNING]
+> [!CAUTION]
 > Content that you see here might not be up to date.<br>
-> Please note , these are the notes for me to look back on.
 
 <ul>
   <li>Introduction</li>
-  Welcome to my Github for Computer Information Technology. This for me to look back at my notes for the classes I have had. 
-  <li>Class</li>
+  Welcome to my Github for Computer Information Technology. This for me to look back at my notes for the classes I have had and to help others that might struggle. 
+  <h3>Table of Contents</h3>
     <ul>
       <li><a href="#section1">CIT 160 Internet Tech</a></li>
       <li><a href="#section2">CIT 210 Deploy & Manage Operating Systems</a></li>
