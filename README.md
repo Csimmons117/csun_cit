@@ -18,10 +18,15 @@
 
 
 <h3 id="section1"><a href="https://github.com/Csimmons117/csun_cit/tree/main/cit160">Internet Tech</a></h3>
+
 <p>Here you will learn the basics of networking. You will work with a team , document your work, wire your own ethernet cables, 
   setting up your own LAN with network switches, and setting up servers. For this class Cisco packet tracer was a big help on seeing 
   and testing how things would work. All 
 </p>
+
+<h3 id="section1"><a href="https://github.com/Csimmons117/csun_cit/tree/main/cit210">Deploy & Manage Operating Systems</a></h3>
+
+<p></p>
 
 <h3 id="section3"><a href="https://github.com/Csimmons117/csun_cit/tree/main/cit270">Amazon Web Services</a></h3>
 
