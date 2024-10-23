@@ -22,7 +22,7 @@
 <h3 id="section3">Amazon Web Services</h3>
 <p>This class will teach you about how AWS works, going over how to running virtual machine, 
   setting up your own network, and how to make sure things are secure. To learn more about the course click
-  <a hef="https://github.com/Csimmons117/csun_cit/tree/main/cit270">here</a>. Still learning in the
+  <a href="https://github.com/Csimmons117/csun_cit/tree/main/cit270">here</a>. Still learning in the
   class will add more information later. </p>
 #### Projects
 
