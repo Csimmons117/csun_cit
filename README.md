@@ -24,6 +24,8 @@
   setting up your own network, and how to make sure things are secure. To learn more about the course click
   <a href="https://github.com/Csimmons117/csun_cit/tree/main/cit270">here</a>. Still learning in the
   class will add more information later. </p>
+  <br>
+  
 #### Projects
 
 
