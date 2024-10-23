@@ -17,14 +17,18 @@
 
 
 
-<h3 id="section1">Internet Tech</h3>
+<h3 id="section1"><a href="https://github.com/Csimmons117/csun_cit/tree/main/cit160">Internet Tech</a></h3>
 <p>Here you will learn the basics of networking. You will work with a team , document your work, wire your own ethernet cables, 
-  setting up your own LAN with network switches, and setting up servers.   </p>
-<h3 id="section3">Amazon Web Services</h3>
+  setting up your own LAN with network switches, and setting up servers. For this class Cisco packet tracer was a big help on seeing 
+  and testing how things would work. All 
+</p>
+
+<h3 id="section3"><a href="https://github.com/Csimmons117/csun_cit/tree/main/cit270">Amazon Web Services</a></h3>
+
 <p>This class will teach you about how AWS works, going over how to running virtual machine, 
-  setting up your own network, and how to make sure things are secure. To learn more about the course click
-  <a href="https://github.com/Csimmons117/csun_cit/tree/main/cit270">here</a>. Still learning in the
-  class will add more information later. </p>
+  setting up your own network, and how to make sure things are secure.Still learning in the
+  class will add more information later. 
+</p>
   <br>
   
 #### Projects
