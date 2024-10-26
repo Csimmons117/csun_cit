@@ -5,7 +5,8 @@
 
 <ul>
   <li>Introduction</li>
-  Welcome to my Github for Computer Information Technology. This for me to look back at my notes for the classes I have had and to help others that might struggle. 
+  Welcome to my Github for Computer Information Technology. This for me to look back at my notes for the classes I have had and to help others that might struggle.
+  <br>
   <h3>Table of Contents</h3>
     <ul>
       <li><a href="https://github.com/Csimmons117/csun_cit/tree/main/cit160">CIT 160 Internet Tech</a></li>
