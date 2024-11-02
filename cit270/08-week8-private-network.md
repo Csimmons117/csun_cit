@@ -132,7 +132,9 @@ We are going to modify the default vpc route table to see if that helps are mach
 Are you sure you want to continue connecting: yes
 ec2-user@172.31.50.192: MOM LOVES YOU
 ```
+End of lab 10/19/2024
 
+---
 > [!CAUTION]
 > Moving forward in are lab I will not be making anymore. <br>
 > Some people are not showing up and don't understand what we are working on.<br>
