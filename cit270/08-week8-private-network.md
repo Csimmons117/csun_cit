@@ -75,7 +75,8 @@ The document has moved
 <!-- This is a line use to note the start of the second half of class-->
 
 ## Setting VPC Peering <!--Lab3 this will be helpful-->
-*This is the next part of the lab creating a VPC peering connection*
+*This is the next part of the lab creating a VPC peering connection*<br>
+
 <img src="./pictures/VPC-peering.png">
 <br>
 
@@ -123,10 +124,10 @@ We are going to modify the default vpc route table to see if that helps are mach
 *Final test if the documentation is correct this should work.*
 *Make sure your in and instance that has a pem file to get in.*
 
-**Input:**
+**Input:**<br>
 ```ssh -i ./labsuser.pem 172.31.50.192```
 
-**Output:**
+**Output:**<br>
 ```
 Are you sure you want to continue connecting: yes
 ec2-user@172.31.50.192: MOM LOVES YOU
