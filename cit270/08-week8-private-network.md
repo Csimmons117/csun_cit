@@ -136,15 +136,15 @@ End of lab 10/19/2024
 
 ---
 > [!CAUTION]
-> Moving forward in are lab I will not be making anymore. <br>
-> Some people are not showing up and don't understand what we are working on.<br>
+> Moving forward in the lab, I will not be making anymore notes public. <br>
+> Some people are not showing up and don't understand what we are working on just copying from the notes.<br>
 > For this reason I will stop making the notes.
 
 <!--
 Amazon provides network strong. We will work on EFS. EFS is not supported on windows
 
 ### Creating a EFS 
-1. 
-2. 
+1. search click EFS
+2. Click on file system
 3. 
 -->
