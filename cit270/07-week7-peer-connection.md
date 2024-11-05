@@ -1,12 +1,9 @@
-### Create a peer connection
-
-<img src="./pictures/peering_conection.png" width="400px">
-<br>
-
-> [!CAUTION]
-> File not done still working on.
+## Making your private network reach the outside
 
 > [!IMPORTANT]
+> Make sure you have completed week6 and week7 to move forward <br>
+> Make sure to start and stop your RDS<br>
+> Make sure both instance for VPC are running you want the **public IP** and **private IP**<br>
 > Before moving forward make sure you can connect to both VPC instance you created. You can do this my connecting to the one that has a public IP once inside the machine try connecting to the second one.
 > 
 > Please note B is public and A is a private network only can access through B (Think of this as a bastion host)
@@ -15,106 +12,142 @@
 > 
 > **Second machine A** ```ssh -i ./labsuser.pem PrivateIP ```
 
-#### Create a NAT gateway
-1. Load up your lab once in go to NAT gateway
-2. Create a NAT gateway
-3. name: NAT-cit270
-4. Subnet: PICK THE SUBNET PUBLIC IP
-5. Communication type: public 
-6. Elastic IP allocation ID: Click on allocate Elastic IP
-7. Click on create NAT gateway
 
-#### Create a Route table
-1. Go to VPC 
-2. Click on route tables
-3. Click on create a route table
-4. Name: private-subnet
-5. VPC: Click on the VPC you created **NOT DEFAULT**
-6. On the route table you just created you are going to edit the route
-7. Add route: Destionation: 0.0.0.0/0 | Target: NAT-cit270
-8. Save
+### Make sure you can sign to both instances
+1. Get the IP for your public instance for this example this is mine: ```3.231.208.2```
+2. Now ssh into the instance: ```ssh ec2-user@3.231.208.2 -i .\labsuser.pem```
+3. Once in you are going to ssh into the private instance: ```ssh -i ./labsuser.pem 10.10.0.4```
 
-<img src='./pictures/2nd-vpc_map.PNG' width="400px">
+
+*This is what we just did we are accessing a private network from are bastion host*
+<img src="./pictures/map.png" width="600px">
 <br>
 
-> Here we have the route table setup and are NAT gateway setup now its time for us to connect them to the subnet A,C,E
+*If you try to ping 8.8.8.8 or 8.8.4.4 you will see that you can not ping out in this lab we are going to change that.*
 
-#### Connection subnet to private-subnet
-> We will only mess with A, C, E subnets
-1. Go to subnets click on **A-subnet** you created though VPC.
-2. Click on the **Route table** and edit it
+<Add image >
 
-<img src="./pictures/route_table.png" width="400px">
-<br>
+### Creating a NAT gateway
+1. Lets go to the VPC
+2. Once on the VPC page on the left click on NAT gateway
+3. Create a NAT gateway
+    - Name: **CAM-NAT-gateway**
+    - Subnet: **Pick one that is a public subnet [b,d,f]**
+    - Elastic IP allocation: Click on **Allocate Elastic IP**
+    - Create NAT gateway
 
-3. Save the route table association
-4. Repeat for C and E subnets
+### Create a route table
+1. On the left click on route tables
+2. Create a new route table
+    - Name: **CAM-Route-Table-private-subnet**
+    - VPC : **Click on the non-default one**
+    - Create route table
+3. With the newly create route table you will click on edit routes
+    - Click **Add route** (Need to route the route to the internet)
+    - In the Destination row click **0.0.0.0/0**
+    - In the Target row click the **NAT gateway** under that click on the **nat gateway you created.**
+    - Save changes
 
-Final result should look like this.
-> Please not it the time I got this wrong and used F and not E I have fixed this.
-<img src="./pictures/different_groups.PNG" width="400px">
+*This is now the table we have and we need to route the private subnets through are new route table*
+<img src="./pictures/2nd-vpc_map.PNG" width="600px">
 
-Test the connection by sshing into your VPC device you created last week. You will ssh into your **public VPC** and then ssh into your **private VPC**.We are testing if you can get outside are private network we created. 
+### Attach Private subnets
+*Here we will tie the private subnets to the new route table created [A,C,E]*
+1. Click on subnets on the VPC page
+2. Click on a private subnet example:**subnet-a**
+3. Click on route table 
+4. Edit route table association
+    - Click on the drop down for route table and select the **route table you created for private subnets**
+    - Save
+    *Repeat step four for the other two private subnets*
 
-Example:
-```
-PS C:\Users\user\Downloads> ssh ec2-user@publicIP -i .\labsuser.pem
-The authenticity of host 'publicIP (publicIP)' can't be established.
-ED25519 key fingerprint is SHA256
-This key is not known by any other names.
-Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
-Warning: Permanently added 'publicIP' (ED25519) to the list of known hosts.
+> If you go to Your VPC you can see two different colors for the public and private subnet and when you hover over them you can see the path they are taking.Yes I know I messed up with my public and private subnet for E and F. 
 
-A newer release of "Amazon Linux" is available.
-  Version 2023.6.20241010:
-Run "/usr/bin/dnf check-release-update" for full release and version update info
-   ,     #_
-   ~\_  ####_        Amazon Linux 2023
-  ~~  \_#####\
-  ~~     \###|
-  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
-   ~~       V~' '->
-    ~~~         /
-      ~~._.   _/
-         _/ _/
-       _/m/'
+<img src="./pictures/private_route_table.png" width="600px">
 
-[ec2-user@ip-10-10-10-167 ~]$ ssh -i ./labsuser.pem 10.10.0.4
-   ,     #_
-   ~\_  ####_        Amazon Linux 2023
-  ~~  \_#####\
-  ~~     \###|
-  ~~       \#/ ___   https://aws.amazon.com/linux/amazon-linux-2023
-   ~~       V~' '->
-    ~~~         /
-      ~~._.   _/
-         _/ _/
-       _/m/'
-Last login: Sat Oct  5 18:44:04 2024 from 10.10.10.167
-[ec2-user@ip-10-10-0-4 ~]$
-```
-Now that we are in we are going to use the command ```curl``` to see if we get a response.  
-```
-[ec2-user@ip-10-10-0-4 ~]$ curl google.com
+Now to test it out use the curl command to get a response from the internet<br>
+Input:
+```curl google.com```
+
+Output: 
+```markdown
 <HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
 <TITLE>301 Moved</TITLE></HEAD><BODY>
 <H1>301 Moved</H1>
 The document has moved
 <A HREF="http://www.google.com/">here</A>.
 </BODY></HTML>
-[ec2-user@ip-10-10-0-4 ~]$
-```
-Here you can see we got a response and it works. You can also try and ping google to see if you get a response, and you should get one back.
-<!--
-
-```
-[ec2-user@ip-10-10-10-167 ~]$ sudo mkdir /efs 
-[ec2-user@ip-10-10-10-167 ~]$ cd /
-[ec2-user@ip-10-10-10-167 /]$ ls 
-bin  boot  dev  efs  etc  home  lib  lib64  local  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
-[ec2-user@ip-10-10-10-167 /]$   
 ```
 
+---
+<!-- This is a line use to note the start of the second half of class-->
 
-```[ec2-user@ip-10-10-10-167 /]$ sudo dnf install amazon-efs-utils ```
--->
+## Setting VPC Peering <!--Lab3 this will be helpful-->
+*This is the next part of the lab creating a VPC peering connection*<br>
+
+<img src="./pictures/VPC-peering.png">
+<br>
+
+1. Go to the VPC page
+2. Click on Peering connections
+3. Create a peering connection
+    - Name: VPC-peer
+    - VPC ID: *Requester* VPC default (172.31.0.0/16)
+    - VPC ID: *Accepter* VPC you created (10.10.0.0/16)
+    - Create peering connections
+    *You didn't create a peering connection you created a **request** for peering connection. You should see a pending acceptance for the peer connection you made click actions and click **Accept request**. A pop up window will appear click **Accept** again*
+
+When trying to test to see if we can connect we can see that the connection is hanging.Lets fix that.
+
+### Fix VPC Peering connection
+1. Go to the VPC route table
+2. Click on the public vpc **not the default one**
+3. Click on edit routes
+    - Click **Add route** (Need to route the route to the internet)
+    - In the Destination row type: 172.31.0.0/16 (Amazon default)
+    - In the Target row click the **Peering connection** click the one you just created
+    - Save changes
+4. Now click on the private VPC you created
+5. Click on edit routes<br>
+
+    > [!WARNING]
+    > I don't remember if this is right I will double check later
+    - Click **Add route** (Need to route the route to the internet)
+    - In the Destination row type: 172.31.0.0/16 (Amazon default)
+    - In the Target row click the **Peering connection** click the one you just created
+    - Save changes
+
+When trying to test to see if we can connect we can see that the connection is still hanging. Lets fix that.This is because the device doesn't know were it is, it has a way to get to are destination but not a way back.
+
+### Come back home
+We are going to modify the default vpc route table to see if that helps are machine find a way back.
+
+1. Go to the VPC route table
+2. Click on the public vpc **the default one**
+3. Click on edit routes
+    - Click **Add route** (Need to route the route to the internet)
+    - In the Destination row type: 10.10.0.0/16 (VPC you created)
+    - In the Target row click the **Peering connection** click the one you just created
+    - Save changes
+
+*Final test if the documentation is correct this should work.*
+*Make sure your in and instance that has a pem file to get in.*
+
+**Input:**<br>
+```ssh -i ./labsuser.pem 172.31.50.192```
+
+**Output:**<br>
+```
+Are you sure you want to continue connecting: yes
+ec2-user@172.31.50.192: MOM LOVES YOU
+```
+End of lab 10/19/2024
+
+---
+> [!CAUTION]
+> Moving forward in the lab, I will not be making anymore notes public. <br>
+> Some people are not showing up and don't understand what we are working on just copying from the notes.<br>
+> For this reason I will stop making the notes public.
+
+
+
