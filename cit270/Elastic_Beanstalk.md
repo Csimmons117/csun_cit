@@ -1,7 +1,7 @@
-### Setting up Elastic Bean Stock
+### Setting up Elastic Beanstalk
 
 1. Get into your AWS account.
-2. In the search bar look for "Elastic bean stock"
+2. In the search bar look for "Elastic Beanstalk"
 3. name: Cam-EBS
 4. Scroll down to Platform 
     - leave managed platform 
