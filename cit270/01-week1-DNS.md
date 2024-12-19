@@ -14,7 +14,7 @@
 1. Enter the name of domain you want for class.
 
 <br>
-<img src="./pictures/domai.png" width=600px>
+<img src="./pictures/domain.png" width=600px>
 
 3. From here you will go to your cart.
     > Here are the things I did.
@@ -34,7 +34,7 @@
 > The page should look like this. Keep this page open and we will come back to it.
 
 <br>
-<img src="./pictures/namesservers.png" width=600px>
+<img src="./pictures/namesserve.png" width=600px>
 
 4. Now login to your AWS Canvas account.
     > If you have any problems logging please talk with the professor.
