@@ -23,7 +23,6 @@ For this class we used this **[website](https://docs.aws.amazon.com/linux/al2023
 
 1. Open up the website above.
 2. Copy 3. in To prepare the LAMP server.
-> so far.
 3. Paste it in the powershell instance.
 ```markdown
 [ec2-user@ip-172-31-29-159 ~]$ sudo dnf install httpd wget php-fpm php-mysqli php-json php php-devel
