@@ -1,4 +1,3 @@
-<<<<<<< HEAD:03-AmazonWebServices270/01-DNS.md
 # Computer Information Technology 270
 
 > This is what I could remember on the first day for the first day
@@ -270,4 +269,4 @@ PS C:\Users\Cameron\Downloads> ssh ec2-user@citclassproject.com -i .\labsuser.pe
 [ec2-user@ip-172-31-29-159 ~]$
 ```
 > If you get this message back from AWS in your powershell instance when you ssh in you are done. **"MOM LOVE YOU"**
->>>>>>> 2025c9a6f8b652f18787039e064f49d47c2aff64:cit270/01-week1-DNS.md
+
