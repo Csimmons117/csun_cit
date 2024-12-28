@@ -1,4 +1,4 @@
-# Computer Information Technology 270
+# Adding an IP to your Domain
 
 > This is what I could remember on the first day for the first day
 
