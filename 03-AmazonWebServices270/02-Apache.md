@@ -1,4 +1,3 @@
-<<<<<<< HEAD:03-AmazonWebServices270/02-Apache.md
 ### Install a LAMP server
 
 From last week i'm going to start will already being in the EC2 instance using DNS.
@@ -243,4 +242,3 @@ To exit this file you can press:
 3. Press **Enter** 
 > **To see if you're successful this should be your webpage when you search your domain or reload that page. This is the end of lab 2.**
 <img src="./pictures/php.png" width=600px>
->>>>>>> 2025c9a6f8b652f18787039e064f49d47c2aff64:cit270/02-week2-php.md
