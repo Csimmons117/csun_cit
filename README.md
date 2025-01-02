@@ -9,9 +9,9 @@
   <br>
   <h3>Table of Contents</h3>
     <ul>
-      <li><a href="https://github.com/Csimmons117/csun_cit/tree/main/cit160">CIT 160 Internet Tech</a></li>
-      <li><a href="https://github.com/Csimmons117/csun_cit/tree/main/cit210">CIT 210 Deploy & Manage Operating Systems</a></li>
-      <li><a href="https://github.com/Csimmons117/csun_cit/tree/main/cit270">CIT 270 Amazon Web Services</a></li>
+      <li><a href="https://github.com/Csimmons117/csun_cit/tree/main/01-InternetTech160">CIT 160 Internet Tech</a></li>
+      <li><a href="https://github.com/Csimmons117/csun_cit/tree/main/02-OperatingSystem210">CIT 210 Deploy & Manage Operating Systems</a></li>
+      <li><a href="https://github.com/Csimmons117/csun_cit/tree/main/03-AmazonWebServices270">CIT 270 Amazon Web Services</a></li>
     </ul>
 </ul>
 
