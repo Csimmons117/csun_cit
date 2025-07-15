@@ -1,7 +1,10 @@
 
-
-/*changes the size of all images*/
-.size{
-width:200px;
-
+.header{
+    border: 10px, red, solid;
+    text-align: center;
 }
+.size{
+    width:200px;
+    height:100px;
+}
+
