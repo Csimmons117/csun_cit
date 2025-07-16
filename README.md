@@ -12,6 +12,8 @@
       <li><a href="https://github.com/Csimmons117/csun_cit/tree/main/01-InternetTech160">CIT 160 Internet Tech</a></li>
       <li><a href="https://github.com/Csimmons117/csun_cit/tree/main/02-OperatingSystem210">CIT 210 Deploy & Manage Operating Systems</a></li>
       <li><a href="https://github.com/Csimmons117/csun_cit/tree/main/03-AmazonWebServices270">CIT 270 Amazon Web Services</a></li>
+      <li><a href="https://github.com/Csimmons117/csun_cit/tree/main/05-Sys-Administration-Management">CIT 360 System Administration Management</a></li>
+      <li><a href="https://github.com/Csimmons117/csun_cit/tree/main/06-Web-Engineer">COMP 484 Web Engineering</a></li>
     </ul>
 </ul>
 
