@@ -1,21 +1,33 @@
 <html>
 
-<title>
     <head>
-
+        <title></title>
     </head>
-</title>
 <body>
-    <h1>Hello world</h1>
+    <h1>Lab2 testing</h1>
     <form>
-
+        <label for="name">Enter your CSUN Username: 
+            <input id="name" name="name" type="text">    
+        </label>
+    </br>
+    </br>
+    
+        <label for="password">Enter your CSUN Password:
+            <input id="password" name="password" type="text">
+        </label>
+    </br>
+    </br>
+    <button type="submit">Submit</button>
+    
+    
+    </form>
+    
+        <!--
          Enter your username for CSUN: <input type="text" placeholder="Username"></input>
          Enter your password for CSUN: <input type="text" placeholder="password"></input>
                                        <button type="">Submit</button>   
+    -->
 
-
-
-    </form>
     <!---
     --Username (a text field)
         o The user should enter only lower-case letters in this field, or the entry is invalid.
@@ -42,10 +54,11 @@
 
 
 <script>
+const name=document.getElementById('name')
+const password=document.getElementById('password')
+const form=document.getElementById('form')
 
-
-
-
+console.log("Hello World")
 </script>
 
 
