@@ -15,7 +15,7 @@
     </br>
     
         <label for="password">Enter your CSUN Password:
-            <input id="password" name="password" type="text">
+            <input id="password" name="password" type="password">
         </label>
     </br>
     </br>
@@ -23,7 +23,9 @@
     
     
     </form>
-    
+    <!-- Added this div to show the output -->
+    <div id="output"></div>
+
         <!--
          Enter your username for CSUN: <input type="text" placeholder="Username"></input>
          Enter your password for CSUN: <input type="text" placeholder="password"></input>
@@ -55,47 +57,25 @@
 </body>
 
 
-<<<<<<< HEAD
-<script>
-
-const name=document.getElementById('name');
-const password=document.getElementById('password');
-const form=document.getElementById('form');
-
-if (name == "Cameron"){
-    console.log("Error")
-}
-
-=======
 
 <script>
-const form = document.querySelector('form'); // Or use document.getElementById('yourFormId')
-const formData = new FormData(form);
+    window.addEventListener("load", start, false);
 
-form.addEventListener('submit', function(event) {
-        // Prevent default form submission behavior (page reload)
-        event.preventDefault();
+function start(){
+    const form = document.querySelector("form"); // Added: get the form
+    const nameInput = document.getElementById("name");
+  form.addEventListener("submit", function(e) {
+      e.preventDefault(); // Added: prevent form from submitting
 
+      const nameValue = nameInput.value; // Added: get input text
+      console.log(nameValue); // Logs to console
 
-const name=document.getElementById('name');
-const password=document.getElementById('password');
-console.log(name);
-
-if (name != "Cameron"){
-    console.log("Error")
-}else{
-    console.log("Hello "+ name);
+      // Added: show the input text on the page
+      document.getElementById("output").textContent = "You entered: " + nameValue; // review for later
+    });
+    
 }
-});
-// Here it works because we have it out side the function 
-//const name ="Cameron"
-//console.log(name);
-//if (name != "Cameron"){
-//    console.log("Error")
-//}else{
-//    console.log("Hello "+ name);
-//}
->>>>>>> 9c8d5f405b39f1170d55efce5a69e3b6026c9970
+
 </script>
 
 
