@@ -55,6 +55,7 @@
 </body>
 
 
+<<<<<<< HEAD
 <script>
 
 const name=document.getElementById('name');
@@ -65,6 +66,36 @@ if (name == "Cameron"){
     console.log("Error")
 }
 
+=======
+
+<script>
+const form = document.querySelector('form'); // Or use document.getElementById('yourFormId')
+const formData = new FormData(form);
+
+form.addEventListener('submit', function(event) {
+        // Prevent default form submission behavior (page reload)
+        event.preventDefault();
+
+
+const name=document.getElementById('name');
+const password=document.getElementById('password');
+console.log(name);
+
+if (name != "Cameron"){
+    console.log("Error")
+}else{
+    console.log("Hello "+ name);
+}
+});
+// Here it works because we have it out side the function 
+//const name ="Cameron"
+//console.log(name);
+//if (name != "Cameron"){
+//    console.log("Error")
+//}else{
+//    console.log("Hello "+ name);
+//}
+>>>>>>> 9c8d5f405b39f1170d55efce5a69e3b6026c9970
 </script>
 
 
