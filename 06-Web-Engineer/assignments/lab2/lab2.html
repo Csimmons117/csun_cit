@@ -9,22 +9,23 @@
     <h1>Lab2 testing</h1>
     <form>
         <label for="name">Enter your CSUN Username: 
-            <input id="name" name="name" type="text">    
+            <input id="name" type="text">    
         </label>
     </br>
     </br>
     
         <label for="password">Enter your CSUN Password:
-            <input id="password" name="password" type="password">
+            <input id="password" type="password">
         </label>
     </br>
     </br>
-    <button type="submit">Submit</button>
+    <input type="button" value="Submit" id="submitbutton">
+
     
     
     </form>
     <!-- Added this div to show the output -->
-    <div id="output"></div>
+    <!--<div id="output"></div>-->
 
         <!--
          Enter your username for CSUN: <input type="text" placeholder="Username"></input>
@@ -59,22 +60,40 @@
 
 
 <script>
-    window.addEventListener("load", start, false);
+    window.addEventListener("load", start);
+//>>Order matters for java make sure that the start is at the bottom and build up if that make sense<<
+    function formSubmitted(){
 
+console.log("you clicked "+ count + " times");
+count ++;
+
+
+
+
+} 
+ 
 function start(){
-    const form = document.querySelector("form"); // Added: get the form
-    const nameInput = document.getElementById("name");
-  form.addEventListener("submit", function(e) {
-      e.preventDefault(); // Added: prevent form from submitting
-
-      const nameValue = nameInput.value; // Added: get input text
-      console.log(nameValue); // Logs to console
-
-      // Added: show the input text on the page
-      document.getElementById("output").textContent = "You entered: " + nameValue; // review for later
-    });
-    
+count =1;
+var submitbutton = document.getElementById("submitbutton");
+submitbutton.addEventListener("click", formSubmitted);
 }
+
+
+
+                    //function start(){
+                    //    const form = document.querySelector("form"); // Added: get the form
+                    //    const nameInput = document.getElementById("name");
+                    //  form.addEventListener("submit", function(e) {
+                    //      e.preventDefault(); // Added: prevent form from submitting
+                    //
+                    //      const nameValue = nameInput.value; // Added: get input text
+                    //      console.log(nameValue); // Logs to console
+                    //
+                    //      // Added: show the input text on the page
+                    //      document.getElementById("output").textContent = "You entered: " + nameValue; // review for later
+                    //    });
+                    //    
+                    //}
 
 </script>
 
