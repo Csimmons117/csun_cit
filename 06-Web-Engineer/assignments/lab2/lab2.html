@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title></title>
+    </head>
+<body>
+    <h1>Lab2 testing</h1>
+    <form>
+        <label for="name">Enter your CSUN Username: 
+            <input id="name" name="name" type="text">    
+        </label>
+    </br>
+    </br>
+    
+        <label for="password">Enter your CSUN Password:
+            <input id="password" name="password" type="password">
+        </label>
+    </br>
+    </br>
+    <button type="submit">Submit</button>
+    
+    
+    </form>
+    <!-- Added this div to show the output -->
+    <div id="output"></div>
+
+        <!--
+         Enter your username for CSUN: <input type="text" placeholder="Username"></input>
+         Enter your password for CSUN: <input type="text" placeholder="password"></input>
+                                       <button type="">Submit</button>   
+    -->
+
+    <!---
+    --Username (a text field)
+        o The user should enter only lower-case letters in this field, or the entry is invalid.
+        You may optionally check this while the user is typing or when the field is blurred,
+        but either way you must check this at form-submission time.
+    -- Password (a password field, <input type=”password”>)
+        o The user should enter a password containing a mix of upper-case and lower-
+        case letters and numbers (at least one of each, or the entry is invalid). Other
+        characters are allowed but optional. You may optionally check this while the user
+        is typing or when the field is blurred, but either way you must check this at form-
+        submission time.
+    Student ID number (a text field)
+        o The user should enter a 9-digit number. No letters are allowed or the entry is
+        invalid. The number must be exactly 9 digits long to be valid. You may optionally
+        check this while the user is typing or when the field is blurred, but either way you
+        must check this at form-submission time.
+
+    
+    
+    -->
+
+
+</body>
+
+
+
+<script>
+    window.addEventListener("load", start, false);
+
+function start(){
+    const form = document.querySelector("form"); // Added: get the form
+    const nameInput = document.getElementById("name");
+  form.addEventListener("submit", function(e) {
+      e.preventDefault(); // Added: prevent form from submitting
+
+      const nameValue = nameInput.value; // Added: get input text
+      console.log(nameValue); // Logs to console
+
+      // Added: show the input text on the page
+      document.getElementById("output").textContent = "You entered: " + nameValue; // review for later
+    });
+    
+}
+
+</script>
+
+
+</html>

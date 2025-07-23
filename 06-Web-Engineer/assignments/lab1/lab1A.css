@@ -1,0 +1,43 @@
+
+.header{
+    border: 10px, red, solid;
+    text-align: center;
+}
+.size{
+    width:200px;
+    height:100px;
+}
+
+<<<<<<< HEAD
+.testing  div{
+    /*border: 10px, solid,pink;/*testing the div box remove later*/
+    background-color: blue;
+    color:white;
+    width: 200px;/*setting a size ot match the rest*/
+    
+    
+}
+.testing ul{
+list-style: none;/*removes the li*/
+display:none;/*hides the list */
+margin:0px; /*shift testing movement*/
+padding: 0px; /*shift testing movement*/
+width: 200px;/*setting a size ot match the rest*/
+}
+.testing:hover ul {
+    display:block;
+}
+
+.testing li {
+    background: blue;
+    color: white;
+ 
+    border: 2px solid blue;
+}
+.testing li:hover {
+    background: yellow;
+    color: black;
+  }
+
+=======
+>>>>>>> 9c8d5f405b39f1170d55efce5a69e3b6026c9970
