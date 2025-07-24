@@ -4,6 +4,11 @@
 
     <head>
         <title></title>
+        <style>
+            .box{
+                border: 10px,pink,solid;
+            }
+        </style>
     </head>
 <body>
     <h1>Lab2 testing</h1>
@@ -17,15 +22,9 @@
         <input type="button" value="Submit" id="submitbutton">      
     </form>
 
-    <div id="output"></div>
+    
     <!-- Added this div to show the output -->
-    <!--<div id="output"></div>-->
-
-        <!--
-         Enter your username for CSUN: <input type="text" placeholder="Username"></input>
-         Enter your password for CSUN: <input type="text" placeholder="password"></input>
-                                       <button type="">Submit</button>   
-    -->
+    <div id="output" class="box"></div>
 
     <!---
     --Username (a text field)
@@ -71,13 +70,12 @@ submitbutton.addEventListener("click", formSubmitted);
 function formSubmitted(){
 var name= document.getElementById("Username").value;
 var test= document.getElementById("Password").value;
+var output = document.getElementById("output");
 name.innerHTML = name;
 test.innerHTML = test;
-
+output.innerHTML = name +" "+ test;
 console.log(name);
 console.log(test);
-
-
 
 
 }
