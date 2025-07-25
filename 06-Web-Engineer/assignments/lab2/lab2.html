@@ -22,7 +22,7 @@
         Enter your StudentID for CSUN:<input type="number" placeholder="StudentID" id="StudentID"></input>
         </br>
         </br>   
-        Enter your semester/year for CSUN:<input type="text" placeholder="semester" id="semester"></input><input type="text" placeholder="year" id="year"></input>
+        Enter your semester/year for CSUN:<input type="text" placeholder="Semester" id="semester"></input><input type="text" placeholder="Year" id="year"></input>
         </br>
         </br> 
 
@@ -73,15 +73,39 @@ studentid.innerHTML = studentid;
 semester.innerHTML = semester;
 year.innerHTML = year;
 
-// >> Output to the div with the id "output"
-var output = document.getElementById("output");
-output.innerHTML = "Username: "+ name +" <br> " + "Password: "+ password + " <br> " + "StudentID: " + studentid + " <br> " + "Semester: " + semester + "  " + "Year: " + year + " <br> ";
 
+
+
+
+
+checking(name);
+
+
+DisplayOutput();
+
+}//end of main function
+
+//=====================Functions below============================// 
+function checking(){
+
+if (name === "" || name === "null"){
+alert("Please enter a username!");
+}
 
 }
 
+function DisplayOutput(name,password,studentid,semester,year){
+// >> Output to the div with the id "output"
+var output = document.getElementById("output");
+output.innerHTML = 
+"Username: "+ name +" <br> " + 
+"Password: "+ password + " <br> " + 
+"StudentID: " + studentid + " <br> " + 
+"Semester: " + semester + " <br> " + 
+"Year: " + year + " <br> ";
 
-
+    
+}
 
 </script>
 
