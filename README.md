@@ -1,4 +1,4 @@
-<center><h1>Computer Information Technology</h1></center>
+<h1 style="text-align: center;>Computer Information Technology</h1>
 
 > [!CAUTION]
 > Content that you see here might not be up to date.<br>
