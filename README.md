@@ -1,4 +1,4 @@
-# Computer Information Technology
+<center><h1>Computer Information Technology</h1></center>
 
 > [!CAUTION]
 > Content that you see here might not be up to date.<br>
