@@ -14,15 +14,20 @@
     <h1>Lab2 testing</h1>
     <form>
         Enter your username for CSUN:<input type="text" placeholder="Username" id="Username"></input>
+        <div id=inputCheckUsername></div>
         </br>
         </br>
         Enter your password for CSUN:<input type="Password" placeholder="Password" id="Password"></input>
+        <div id=inputCheckPassword></div>
         </br>
         </br>
         Enter your StudentID for CSUN:<input type="number" placeholder="StudentID" id="StudentID"></input>
+        <div id=inputCheckStudentid></div>
         </br>
         </br>   
         Enter your semester/year for CSUN:<input type="text" placeholder="Semester" id="semester"></input><input type="text" placeholder="Year" id="year"></input>
+        <div id=inputCheckSemester></div>
+        <div id=inputCheckYear></div>
         </br>
         </br> 
 
@@ -72,24 +77,45 @@ password.innerHTML = password;
 studentid.innerHTML = studentid;
 semester.innerHTML = semester;
 year.innerHTML = year;
+checking(name,password,studentid,semester,year);//fix later
 
 
-
-
-
-
-checking(name);
-
-
-DisplayOutput();
+DisplayOutput(name,password,studentid,semester,year);
 
 }//end of main function
 
 //=====================Functions below============================// 
-function checking(){
+function checking(name,password,studentid,semester,year){
 
 if (name === "" || name === "null"){
-alert("Please enter a username!");
+var inputCheckUsername = document.getElementById("inputCheckUsername");
+
+ inputCheckUsername.textContent = "Please enter a valid Username"
+ inputCheckUsername.style.color = "red"
+}
+//if (password.length <= 10 ){
+//var inputCheckPassword = document.getElementById("inputCheckPassword");
+//
+// inputCheckPassword.textContent = "Please enter a valid password legth"
+// inputCheckPassword.style.color = "red"
+//}
+//if (studentid === "" || studentid === "null"){
+//var inputCheckStudentid = document.getElementById("inputCheckStudentid");
+//
+// inputCheckStudentid.textContent = "Please enter a valid studentid"
+// inputCheckStudentid.style.color = "red"
+//}
+if (semester === "" || semester === "null"){
+var inputCheckSemester = document.getElementById("inputCheckSemester");
+
+ inputCheckSemester.textContent = "Please enter a valid semester"
+ inputCheckSemester.style.color = "red"
+}
+if (year === "" || year === "null"){
+var inputCheckYear = document.getElementById("inputCheckYear");
+
+ inputCheckYear.textContent = "Please enter a valid year"
+ inputCheckYear.style.color = "red"
 }
 
 }
