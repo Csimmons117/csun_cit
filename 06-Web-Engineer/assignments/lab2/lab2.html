@@ -8,35 +8,33 @@
             .box{
                 border: 10px,pink,solid;
             }
+            .test{}
         </style>
     </head>
 <body>
     <h1>Lab2 testing</h1>
     <form>
         Enter your username for CSUN:<input type="text" placeholder="Username" id="Username"></input>
-        <div id=inputCheckUsername></div>
+        <div id="inputCheckUsername"></div>
+        <div id="correctOutput" class="test"></div>
         </br>
         </br>
         Enter your password for CSUN:<input type="Password" placeholder="Password" id="Password"></input>
         <div id=inputCheckPassword></div>
+        <div id="inputCheckPasswordCorrect"></div> <!--fix-->
         </br>
         </br>
         Enter your StudentID for CSUN:<input type="number" placeholder="StudentID" id="StudentID"></input>
         <div id=inputCheckStudentid></div>
+        <div id="inputCheckStudentIDCorrect"></div> <!--fix-->
         </br>
         </br>   
-        Enter your semester/year for CSUN:<input type="text" placeholder="Semester" id="semester"></input><input type="text" placeholder="Year" id="year"></input>
+        Enter your semester/year for CSUN:<input type="text" placeholder="Semester" id="semester"></input><input type="number" placeholder="Year" id="year"></input>
         <div id=inputCheckSemester></div>
         <div id=inputCheckYear></div>
+        <div id="inputCheckSemesterYearCorrect"></div> <!--fix-->
         </br>
         </br> 
-
-
-
-
-
-
-
         <input type="button" value="Submit" id="submitbutton">      
     </form>
 
@@ -53,7 +51,7 @@
 
 
 // >> Broswer finishing loading the website<<
-window.addEventListener("load", start, false);
+window.addEventListener("load", start);
 
 
 // >> start gets called <<
@@ -72,11 +70,11 @@ var password= document.getElementById("Password").value;
 var studentid= document.getElementById("StudentID").value;
 var semester= document.getElementById("semester").value;
 var year= document.getElementById("year").value;
-name.innerHTML = name;
-password.innerHTML = password;
-studentid.innerHTML = studentid;
-semester.innerHTML = semester;
-year.innerHTML = year;
+//==name.innerHTML = name;
+//password.innerHTML = password;
+//studentid.innerHTML = studentid;
+//semester.innerHTML = semester;
+//year.innerHTML = year;
 checking(name,password,studentid,semester,year);//fix later
 
 
@@ -87,38 +85,64 @@ DisplayOutput(name,password,studentid,semester,year);
 //=====================Functions below============================// 
 function checking(name,password,studentid,semester,year){
 
-if (name === "" || name === "null"){
-var inputCheckUsername = document.getElementById("inputCheckUsername");
+const checkArrayName = name;
+console.log(name);
 
- inputCheckUsername.textContent = "Please enter a valid Username"
- inputCheckUsername.style.color = "red"
-}
-//if (password.length <= 10 ){
+//### below works remove comments later 
+//var inputCheckUsername
+//var inputCheckUsernameCorrect
+//
+//if (name === "" || name === "null" || name.length < 7){
+//    inputCheckUsername = document.getElementById("inputCheckUsername");
+//    inputCheckUsername.textContent = "Please enter a valid Username must be 7 letters long.";
+//    inputCheckUsername.style.color = "red";
+//}else{
+//    correctOutput=document.getElementById("correctOutput");
+//    correctOutput.textContent = "Valid CSUN Username.";
+//    correctOutput.style.color = "green";
+//}
+//#### Above works###
+
+
+
+
+//if (password.length < 10 ){
 //var inputCheckPassword = document.getElementById("inputCheckPassword");
 //
-// inputCheckPassword.textContent = "Please enter a valid password legth"
+// inputCheckPassword.textContent = "Please enter a valid password legth minium of ten charaters."
 // inputCheckPassword.style.color = "red"
 //}
-//if (studentid === "" || studentid === "null"){
+//
+//
+//
+//if (studentid.length < 8 || studentid ===""){
 //var inputCheckStudentid = document.getElementById("inputCheckStudentid");
 //
-// inputCheckStudentid.textContent = "Please enter a valid studentid"
+// inputCheckStudentid.textContent = "Please enter a valid StudentID, it must be 9 digits long"
 // inputCheckStudentid.style.color = "red"
 //}
-if (semester === "" || semester === "null"){
-var inputCheckSemester = document.getElementById("inputCheckSemester");
+//
+//
+//
+//if (semester === "" || semester === "null"){
+//var inputCheckSemester = document.getElementById("inputCheckSemester");
+//
+// inputCheckSemester.textContent = "Please enter a valid semester"
+// inputCheckSemester.style.color = "red"
+//}
+//
+//
+//
+//if (year === "" || year === "null"){
+//var inputCheckYear = document.getElementById("inputCheckYear");
+//
+// inputCheckYear.textContent = "Please enter a valid year"
+// inputCheckYear.style.color = "red"
+//}
 
- inputCheckSemester.textContent = "Please enter a valid semester"
- inputCheckSemester.style.color = "red"
-}
-if (year === "" || year === "null"){
-var inputCheckYear = document.getElementById("inputCheckYear");
 
- inputCheckYear.textContent = "Please enter a valid year"
- inputCheckYear.style.color = "red"
-}
 
-}
+}// end of checking
 
 function DisplayOutput(name,password,studentid,semester,year){
 // >> Output to the div with the id "output"
