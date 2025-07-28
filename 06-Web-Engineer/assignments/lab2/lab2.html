@@ -80,7 +80,7 @@ var year= document.getElementById("year").value;
 
 checking(name,password,studentid,semester,year);//fix later
 
-
+UpperCase(name);
 DisplayOutput(name,password,studentid,semester,year);
 
 }//end of main function
@@ -123,6 +123,10 @@ if (name === "" || name === "null" || name.length < 7){
 
 // ########## This will probably be used in password############
 // >> Checking for upper caps in the beginning start <<
+function UpperCase(){
+
+
+console.log("HELLOWORLD");
 checkArrayName = name;
 list ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 check = name.charAt(0);//C
@@ -144,6 +148,7 @@ if (upperCase == false)
     error.style.color = "red";
     error.innerHTML = "Error please enter a capital letter at the beginning.";
 
+}
 }
 //>> Checking for upper caps in the beginning end <<
 
