@@ -16,7 +16,8 @@
     <form>
         Enter your username for CSUN:<input type="text" placeholder="Username" id="Username"></input>
         <div id="inputCheckUsername"></div>
-        <div id="correctOutput" class="test"></div>
+        <div id="correctOutput"></div>
+        <div id="error"></div>
         </br>
         </br>
         Enter your password for CSUN:<input type="Password" placeholder="Password" id="Password"></input>
@@ -84,16 +85,35 @@ DisplayOutput(name,password,studentid,semester,year);
 
 //=====================Functions below============================// 
 function checking(name,password,studentid,semester,year){
-var i;
-var testCheck;
 const checkArrayName = name;
 const list ="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-console.log(name);
+var i;
+var testCheck;
+var upperCase;
+var error;
+var result;
 
-testCheck = name.charAt(0);
+testCheck = name.charAt(0);//C
+upperCase = false;
 
-console.log(testCheck);
+
 i=0;
+for (;i<list.length;){
+    if (testCheck === list.charAt(i)){
+        result = list.charAt(i);
+        console.log(result);//C is displayed
+        upperCase = true;
+
+        break;
+    }
+    i++;
+}
+if (upperCase == false)
+{console.log("Hello World");}// this worked 
+
+            error = document.getElementById("error");
+            error.textContext = "ERROR PLEASE ENTER A CAPITAL LETTER";
+    
 
 
 //### below works remove comments later 
@@ -102,7 +122,7 @@ i=0;
 //
 //if (name === "" || name === "null" || name.length < 7){
 //    inputCheckUsername = document.getElementById("inputCheckUsername");
-//    inputCheckUsername.textContent = "Please enter a valid Username must be 7 letters long.";
+//    inputCheckUsername.textContent = "Please enter a valid Username must be 7 letters //ng.";
 //    inputCheckUsername.style.color = "red";
 //}else{
 //    correctOutput=document.getElementById("correctOutput");
