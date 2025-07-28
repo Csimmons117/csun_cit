@@ -23,12 +23,17 @@
         Enter your password for CSUN:<input type="Password" placeholder="Password" id="Password"></input>
         <div id=inputCheckPassword></div>
         <div id="inputCheckPasswordCorrect"></div> <!--fix-->
+<<<<<<< HEAD
         <div id="error"></div>
+=======
+        <div id="correctOutputPassword"></div>
+>>>>>>> 4d065c92466c2bbcb259fb13ec86eb53638139e5
         </br>
         </br>
         Enter your StudentID for CSUN:<input type="number" placeholder="StudentID" id="StudentID"></input>
         <div id=inputCheckStudentid></div>
         <div id="inputCheckStudentIDCorrect"></div> <!--fix-->
+        <div id="correctOutput"></div>
         </br>
         </br>   
         Enter your semester/year for CSUN:<input type="text" placeholder="Semester" id="semester"></input><input type="number" placeholder="Year" id="year"></input>
@@ -37,7 +42,7 @@
         <div id="inputCheckSemesterYearCorrect"></div> <!--fix-->
         </br>
         </br> 
-        <input type="button" value="Submit" id="submitbutton"></input>    
+        <input type="button" value="Submit" id="submitbutton" ></input>    
         <button onclick=location="C:/Users/cssim/git_files/csun_cit/06-Web-Engineer/assignments/lab2/lab2.html">Refresh</button>    
 
 
@@ -77,7 +82,7 @@ var semester= document.getElementById("semester").value;
 var year= document.getElementById("year").value;
 
 checking(name,password,studentid,semester,year);//fix later
-
+//UpperCase(name);
 
 DisplayOutput(name,password,studentid,semester,year);
 
@@ -96,40 +101,81 @@ var check;
 var upperCase;
 var error;
 var result;
-//########## need to check for a number
-//var j;
-//var checkArrayNumber;
-//var numberList;
-//var numberCheck;
-//var numberResults;
-
-
+var value;
 
 //### below works remove comments later 
-if (name === "" || name === "null" || name.length < 7){
+if (name === "" || name === "null"){
+    inputCheckUsername = document.getElementById("inputCheckUsername");
+    inputCheckUsername.textContent = "Please enter a valid Username.";
+    inputCheckUsername.style.color = "red";
+}
+else if (name.length < 7){
     inputCheckUsername = document.getElementById("inputCheckUsername");
     inputCheckUsername.textContent = "Please enter a valid Username must  7 letters long.";
-    inputCheckUsername.style.color = "red";
-}else{
-    correctOutput=document.getElementById("correctOutput");
-    correctOutput.textContent = "Valid CSUN Username.";
-    correctOutput.style.color = "green";
+    inputCheckUsername.style.color = "red";}
+
+else{
+
+    UpperCase(name);
 }
 //#### Above checking if the text box is empty###
 
 
+function UpperCase(value){
 
-// ########## This will probably be used in password############
-// >> Checking for upper caps in the beginning start <<
-checkArrayName = name;
-list ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-check = name.charAt(0);//C
-upperCase = false;
-i=0;
+    checkArrayName = value;
+    list ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    check = value.charAt(0);//C
+    upperCase = false;
+    i=0;
+    for (;i<list.length;){
+        if (check === list.charAt(i)){
+            result = list.charAt(i);
+            //console.log(result);//C is displayed
+            upperCase = true;
+            break;
+        }
+        i++;
+    }
+    if (upperCase == false)
+    {
+
+        error = document.getElementById("error");
+        error.style.color = "red";
+        error.innerHTML = "Error please enter a capital letter at the beginning.";
+
+    }else{
+
+        correctOutput=document.getElementById("correctOutput");
+        correctOutput.textContent = "Valid CSUN Username.";
+        correctOutput.style.color = "green";
+
+
+    }
+
+}//>> Checking for upper caps in the beginning end <<
+
+
+if (password.length < 10 ){
+    var inputCheckPassword = document.getElementById("inputCheckPassword");
+    var correctOutputPassword = document.getElementById("correctOutputPassword");
+    inputCheckPassword.textContent = "Please enter a valid password legth minium of ten charaters."
+    inputCheckPassword.style.color = "red"
+}else{
+    UpperCasePassword(password);
+
+}
+
+
+function UpperCasePassword(value){
+    checkArrayName = value;
+    list ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    check = value.charAt(0);
+    upperCase = false;
+    i=0;
 for (;i<list.length;){
     if (check === list.charAt(i)){
         result = list.charAt(i);
-        //console.log(result);//C is displayed
         upperCase = true;
         break;
     }
@@ -142,29 +188,36 @@ if (upperCase == false)
     error.style.color = "red";
     error.innerHTML = "Error please enter a capital letter at the beginning.";
 
+}else{
+
+    correctOutput=document.getElementById("correctOutputPassword");
+    correctOutput.textContent = "Valid CSUN Username.";
+    correctOutput.style.color = "green";
 }
-//>> Checking for upper caps in the beginning end <<
+}// end of password validation
+//
+
+//
+if (studentid.length < 8 || studentid ===""){
+var inputCheckStudentid = document.getElementById("inputCheckStudentid");
+
+ inputCheckStudentid.textContent = "Please enter a valid StudentID, it must be 9 digits long"
+ inputCheckStudentid.style.color = "red"
+}else{
+    checkDigit();
+}
+
+function checkDigit(studentid){
+ var numberArray;
+ 
+ numberArray = [1,2,3,4,5,6,7,8,9.0];
+
+ 
 
 
 
 
-
-//if (password.length < 10 ){
-//var inputCheckPassword = document.getElementById("inputCheckPassword");
-//
-// inputCheckPassword.textContent = "Please enter a valid password legth minium of ten charaters."
-// inputCheckPassword.style.color = "red"
-//}
-//
-//
-//
-//if (studentid.length < 8 || studentid ===""){
-//var inputCheckStudentid = document.getElementById("inputCheckStudentid");
-//
-// inputCheckStudentid.textContent = "Please enter a valid StudentID, it must be 9 digits long"
-// inputCheckStudentid.style.color = "red"
-//}
-//
+}
 //
 //
 //if (semester === "" || semester === "null"){
@@ -197,10 +250,7 @@ output.innerHTML =
 "Semester: " + semester + " <br> " + 
 "Year: " + year + " <br> ";
 
-    
 }
 
 </script>
-
-
 </html>
