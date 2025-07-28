@@ -36,7 +36,10 @@
         <div id="inputCheckSemesterYearCorrect"></div> <!--fix-->
         </br>
         </br> 
-        <input type="button" value="Submit" id="submitbutton">      
+        <input type="button" value="Submit" id="submitbutton"></input>    
+        <button onclick=location="C:/Users/cssim/git_files/csun_cit/06-Web-Engineer/assignments/lab2/lab2.html">Refresh</button>    
+
+
     </form>
 
     
@@ -71,11 +74,7 @@ var password= document.getElementById("Password").value;
 var studentid= document.getElementById("StudentID").value;
 var semester= document.getElementById("semester").value;
 var year= document.getElementById("year").value;
-//==name.innerHTML = name;
-//password.innerHTML = password;
-//studentid.innerHTML = studentid;
-//semester.innerHTML = semester;
-//year.innerHTML = year;
+
 checking(name,password,studentid,semester,year);//fix later
 
 
@@ -85,51 +84,66 @@ DisplayOutput(name,password,studentid,semester,year);
 
 //=====================Functions below============================// 
 function checking(name,password,studentid,semester,year){
-const checkArrayName = name;
-const list ="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+//## checker for empty or null text box##
+var inputCheckUsername;
+var inputCheckUsernameCorrect;
+//#####uppercase#####
+var checkArrayName;
+var list;
 var i;
-var testCheck;
+var check;
 var upperCase;
 var error;
 var result;
+//########## need to check for a number
+//var j;
+//var checkArrayNumber;
+//var numberList;
+//var numberCheck;
+//var numberResults;
 
-testCheck = name.charAt(0);//C
+
+
+//### below works remove comments later 
+if (name === "" || name === "null" || name.length < 7){
+    inputCheckUsername = document.getElementById("inputCheckUsername");
+    inputCheckUsername.textContent = "Please enter a valid Username must  7 letters long.";
+    inputCheckUsername.style.color = "red";
+}else{
+    correctOutput=document.getElementById("correctOutput");
+    correctOutput.textContent = "Valid CSUN Username.";
+    correctOutput.style.color = "green";
+}
+//#### Above checking if the text box is empty###
+
+
+
+// ########## This will probably be used in password############
+// >> Checking for upper caps in the beginning start <<
+checkArrayName = name;
+list ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+check = name.charAt(0);//C
 upperCase = false;
-
-
 i=0;
 for (;i<list.length;){
-    if (testCheck === list.charAt(i)){
+    if (check === list.charAt(i)){
         result = list.charAt(i);
-        console.log(result);//C is displayed
+        //console.log(result);//C is displayed
         upperCase = true;
-
         break;
     }
     i++;
 }
 if (upperCase == false)
-{console.log("Hello World");}// this worked 
+{
 
-            error = document.getElementById("error");
-            error.textContext = "ERROR PLEASE ENTER A CAPITAL LETTER";
-    
+    error = document.getElementById("error");
+    error.style.color = "red";
+    error.innerHTML = "Error please enter a capital letter at the beginning.";
 
+}
+//>> Checking for upper caps in the beginning end <<
 
-//### below works remove comments later 
-//var inputCheckUsername
-//var inputCheckUsernameCorrect
-//
-//if (name === "" || name === "null" || name.length < 7){
-//    inputCheckUsername = document.getElementById("inputCheckUsername");
-//    inputCheckUsername.textContent = "Please enter a valid Username must be 7 letters //ng.";
-//    inputCheckUsername.style.color = "red";
-//}else{
-//    correctOutput=document.getElementById("correctOutput");
-//    correctOutput.textContent = "Valid CSUN Username.";
-//    correctOutput.style.color = "green";
-//}
-//#### Above works###
 
 
 
