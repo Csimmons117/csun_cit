@@ -36,7 +36,7 @@ test-switch(config)# vlan 10
 test-switch(config-vlan)#name IT
 test-switch(config-vlan)#exit
 ```
-### Assign Vlan to LAN
+#### Assign Vlan to LAN
 ```
 test-switch(config)#interface fastEthernet 0/1 - 4
 test-switch(Config-if)#switch mode access
