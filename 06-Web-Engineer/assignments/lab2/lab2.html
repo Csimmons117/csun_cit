@@ -10,50 +10,7 @@
             }
             .test{}
         </style>
-    </head>
-<body>
-    <h1>Lab2 testing</h1>
-    <form>
-        Enter your username for CSUN:<input type="text" placeholder="Username" id="Username"></input>
-        <div id="inputCheckUsername"></div>
-        <div id="correctOutput"></div>
-        <div id="error"></div>
-        </br>
-        </br>
-        Enter your password for CSUN:<input type="Password" placeholder="Password" id="Password"></input>
-        <div id=inputCheckPassword></div>
-        <div id="inputCheckPasswordCorrect"></div> <!--fix-->
-        <div id="correctOutputPassword"></div>
-        </br>
-        </br>
-        Enter your StudentID for CSUN:<input type="number" placeholder="StudentID" id="StudentID"></input>
-        <div id=inputCheckStudentid></div>
-        <div id="inputCheckStudentIDCorrect"></div> <!--fix-->
-        <div id="correctOutput"></div>
-        </br>
-        </br>   
-        Enter your semester/year for CSUN:<input type="text" placeholder="Semester" id="semester"></input><input type="number" placeholder="Year" id="year"></input>
-        <div id=inputCheckSemester></div>
-        <div id=inputCheckYear></div>
-        <div id="inputCheckSemesterYearCorrect"></div> <!--fix-->
-        </br>
-        </br> 
-        <input type="button" value="Submit" id="submitbutton" ></input>    
-        <button onclick=location="C:/Users/cssim/git_files/csun_cit/06-Web-Engineer/assignments/lab2/lab2.html">Refresh</button>    
-
-
-    </form>
-
-    
-    <!-- Added this div to show the output -->
-    <div id="output" class="box"></div>
-
-
-</body>
-
-
-
-<script>
+        <script>
 
 
 // >> Broswer finishing loading the website<<
@@ -83,6 +40,10 @@ checking(name,password,studentid,semester,year);//fix later
 DisplayOutput(name,password,studentid,semester,year);
 
 }//end of main function
+
+
+
+
 
 //=====================Functions below============================// 
 function checking(name,password,studentid,semester,year){
@@ -117,6 +78,8 @@ else{
 //#### Above checking if the text box is empty###
 
 
+
+
 function UpperCase(value){
 
     checkArrayName = value;
@@ -136,12 +99,16 @@ function UpperCase(value){
     if (upperCase == false)
     {
 
+
+
+
+
         error = document.getElementById("error");
         error.style.color = "red";
         error.innerHTML = "Error please enter a capital letter at the beginning.";
 
     }else{
-
+        error.innerHTML="";
         correctOutput=document.getElementById("correctOutput");
         correctOutput.textContent = "Valid CSUN Username.";
         correctOutput.style.color = "green";
@@ -150,6 +117,11 @@ function UpperCase(value){
     }
 
 }//>> Checking for upper caps in the beginning end <<
+
+
+
+
+
 
 
 if (password.length < 10 ){
@@ -192,6 +164,11 @@ if (upperCase == false)
 }
 }// end of password validation
 //
+
+
+
+////review if (check = 'A' || check = z"") then do somehting 
+
 
 //
 if (studentid.length < 8 || studentid ===""){
@@ -249,4 +226,45 @@ output.innerHTML =
 }
 
 </script>
+    </head>
+<body>
+    <h1>Lab2 testing</h1>
+    <form>
+        Enter your username for CSUN:<input type="text" placeholder="Username" id="Username"></input>
+        <div id="inputCheckUsername"></div>
+        <div id="correctOutput"></div>
+        <div id="error"></div>
+        </br>
+        </br>
+        Enter your password for CSUN:<input type="Password" placeholder="Password" id="Password"></input>
+        <div id=inputCheckPassword></div>
+        <div id="inputCheckPasswordCorrect"></div> <!--fix-->
+        <div id="correctOutputPassword"></div>
+        </br>
+        </br>
+        Enter your StudentID for CSUN:<input type="number" placeholder="StudentID" id="StudentID"></input>
+        <div id=inputCheckStudentid></div>
+        <div id="inputCheckStudentIDCorrect"></div> <!--fix-->
+        <div id="correctOutput"></div>
+        </br>
+        </br>   
+        Enter your semester/year for CSUN:<input type="text" placeholder="Semester" id="semester"></input><input type="number" placeholder="Year" id="year"></input>
+        <div id=inputCheckSemester></div>
+        <div id=inputCheckYear></div>
+        <div id="inputCheckSemesterYearCorrect"></div> <!--fix-->
+        </br>
+        </br> 
+        <input type="button" value="Submit" id="submitbutton" ></input>    
+        <input type="button" onclick=location="lab2.html">Refresh</input> <!--remove later -->   
+
+
+    </form>
+
+    
+    <!-- Added this div to show the output -->
+    <div id="output" class="box"></div>
+
+
+</body>
+
 </html>
