@@ -174,29 +174,78 @@ if (upperCase == false)
 // check = value.charAt(0); i fcheck doesnt equall i++ for next char?
 
 //
-if (studentid.length < 8 || studentid ===""){
+if (studentid.length < 8 || studentid ==="" || studentid ==="e"){
 var inputCheckStudentid = document.getElementById("inputCheckStudentid");
 
  inputCheckStudentid.textContent = "Please enter a valid StudentID, it must be 9 digits long"
  inputCheckStudentid.style.color = "red"
+ checkDigit(studentid);
 }else{
-    checkDigit();
+    checkDigit(studentid);
 }
 
+
+
+
+
+
+
+    
 function checkDigit(studentid){
  
- var startNumber;
- var endNumber;
+var startNumber;
+var endNumber;
+var checkID;
+checkID = studentid;
+startNumber = "0";
+endNumber = "9";
+var inputCheckStudentID = document.getElementById("correctOutputStudentID");
+if ( checkID >= startNumber|| checkID <= endNumber){
+   
+    
+   correctOutputStudentID.textContent = "Valid  password.";
+   correctOutputStudentID.style.color = "green";
+   
+}else{
+   console.log("No number here");
 
- if (startNumber = '0' || endNumber = '9'){
-    console.log("Hello World");
- }else {
-    console.log("ErroRRRR");
+}// double check the to make sure that a number was entered.
 
- }
+//
+//correctOutput=document.getElementById("correctOutputPassword");
+//   correctOutput.textContent = "Valid  password.";
+//   correctOutput.style.color = "green";
+//
+//
+//
+//
+
+
+
+
+
+
 
  
+function checkChar(value){
+var startChar;
+var endChar;
+var checkChar;
+checkChar = value;
+startChar = "!";
+endChar = "@";// double check based of the ascii table 
 
+if (checkChar >= startChar || checkChar <= endChar){
+console.log("");
+
+}else{
+
+
+}
+
+
+
+}
 
 
 
@@ -255,7 +304,7 @@ output.innerHTML =
         Enter your StudentID for CSUN:<input type="number" placeholder="StudentID" id="StudentID"></input>
         <div id=inputCheckStudentid></div>
         <div id="inputCheckStudentIDCorrect"></div> <!--fix-->
-        <div id="correctOutput"></div>
+        <div id="correctOutputStudentID"></div>
         </br>
         </br>   
         Enter your semester/year for CSUN:<input type="text" placeholder="Semester" id="semester"></input><input type="number" placeholder="Year" id="year"></input>
