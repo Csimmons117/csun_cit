@@ -60,7 +60,7 @@ var error;
 var result;
 var value;
 
-//### below works remove comments later 
+// #### Username Check ####
 if (name === "" || name === "null"){
     inputCheckUsername = document.getElementById("inputCheckUsername");
     inputCheckUsername.textContent = "Please enter a valid Username.";
@@ -73,9 +73,9 @@ else if (name.length < 7){
 
 else{
 
-    UpperCase(name);
+    UpperCase(name); // IMPORTANT FIX LOGIC BACKWARDS
 }
-//#### Above checking if the text box is empty###
+//#### Above checking if the text box is empty and have a capitial letter ###
 
 
 
@@ -98,16 +98,18 @@ function UpperCase(value){
     }
     if (upperCase == false)
     {
-
+        correctOutput=document.getElementById("correctOutput");
+        correctOutput.innerHTML = "";
         error = document.getElementById("error");
         error.style.color = "red";
         error.innerHTML = "Error please enter a capital letter at the beginning.";
 
     }else{
-        error.innerHTML="";
-        correctOutput=document.getElementById("correctOutput");
-        correctOutput.textContent = "Valid CSUN Username.";
-        correctOutput.style.color = "green";
+       correctOutput=document.getElementById("correctOutput");
+       correctOutput.innerHTML = "Valid CSUN Username.";
+       correctOutput.style.color = "green";
+       error = document.getElementById("error");// this need to be here to output the error.innerHTML
+       error.textContent = "";
 
 
     }
@@ -118,14 +120,16 @@ function UpperCase(value){
 
 
 
-
+// #### Password Check ####
 
 if (password.length < 10 ){
     var inputCheckPassword = document.getElementById("inputCheckPassword");
     var correctOutputPassword = document.getElementById("correctOutputPassword");
-    inputCheckPassword.textContent = "Please enter a valid password legth minium of ten charaters."
-    inputCheckPassword.style.color = "red"
+    inputCheckPassword.textContent = "Please enter a valid password legth minium of ten charaters.";
+    inputCheckPassword.style.color = "red";
 }else{
+    var inputCheckPassword = document.getElementById("inputCheckPassword");
+    inputCheckPassword.textContent = "";
     UpperCasePassword(password);
 
 }
@@ -157,6 +161,8 @@ if (upperCase == false)
     correctOutput=document.getElementById("correctOutputPassword");
     correctOutput.textContent = "Valid  password.";
     correctOutput.style.color = "green";
+    error = document.getElementById("error");
+    error = innerHTML ="";
 }
 }// end of password validation
 //
@@ -165,6 +171,7 @@ if (upperCase == false)
 
 ////review if (check = 'A' || check = z"") then do somehting 
 
+// check = value.charAt(0); i fcheck doesnt equall i++ for next char?
 
 //
 if (studentid.length < 8 || studentid ===""){
@@ -177,9 +184,16 @@ var inputCheckStudentid = document.getElementById("inputCheckStudentid");
 }
 
 function checkDigit(studentid){
- var numberArray;
  
- numberArray = [1,2,3,4,5,6,7,8,9.0];
+ var startNumber;
+ var endNumber;
+
+ if (startNumber = '0' || endNumber = '9'){
+    console.log("Hello World");
+ }else {
+    console.log("ErroRRRR");
+
+ }
 
  
 
