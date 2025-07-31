@@ -17,7 +17,7 @@
 window.addEventListener("load", start);
 
 
-// >> start gets called <<
+// >> START IS MAIN  <<
 function start(){
 
 var submitbutton = document.getElementById("submitbutton");
@@ -81,28 +81,38 @@ else{
 
 
 function UpperCase(value){
-
+    j=0;
+    //result = "helloworld"
     checkArrayName = value;
     list ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    check = value.charAt(0);//C
+    check = value.charAt(j);//C
     upperCase = false;
+    check = value.charAt(j);//C
     i=0;
+    
     for (;i<list.length;){
         if (check === list.charAt(i)){
             result = list.charAt(i);
             //console.log(result);//C is displayed
             upperCase = true;
-            break;
+            //break;
+
         }
+
+        check = value.charAt(j);//C
         i++;
+        j++;
+        //console.log(check);
+        //console.log(result + "Results")
+    
     }
-    if (upperCase == false)
+    if (upperCase == true)
     {
         correctOutput=document.getElementById("correctOutput");
         correctOutput.innerHTML = "";
         error = document.getElementById("error");
         error.style.color = "red";
-        error.innerHTML = "Error please enter a capital letter at the beginning.";
+        error.innerHTML = "Error please make sure there are no capitial letters";
 
     }else{
        correctOutput=document.getElementById("correctOutput");
@@ -122,130 +132,128 @@ function UpperCase(value){
 
 // #### Password Check ####
 
-if (password.length < 10 ){
-    var inputCheckPassword = document.getElementById("inputCheckPassword");
-    var correctOutputPassword = document.getElementById("correctOutputPassword");
-    inputCheckPassword.textContent = "Please enter a valid password legth minium of ten charaters.";
-    inputCheckPassword.style.color = "red";
-}else{
-    var inputCheckPassword = document.getElementById("inputCheckPassword");
-    inputCheckPassword.textContent = "";
-    UpperCasePassword(password);
-
-}
-
-
-function UpperCasePassword(value){
-    checkArrayName = value;
-    list ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    check = value.charAt(0);
-    upperCase = false;
-    i=0;
-for (;i<list.length;){
-    if (check === list.charAt(i)){
-        result = list.charAt(i);
-        upperCase = true;
-        break;
-    }
-    i++;
-}
-if (upperCase == false)
-{
-
-    error = document.getElementById("error");
-    error.style.color = "red";
-    error.innerHTML = "Error please enter a capital letter at the beginning.";
-
-}else{
-
-    correctOutput=document.getElementById("correctOutputPassword");
-    correctOutput.textContent = "Valid  password.";
-    correctOutput.style.color = "green";
-    error = document.getElementById("error");
-    error = innerHTML ="";
-}
-}// end of password validation
+//if (password.length < 10 ){
+//    var inputCheckPassword = document.getElementById("inputCheckPassword");
+//    var correctOutputPassword = document.getElementById("correctOutputPassword");
+//    inputCheckPassword.textContent = "Please enter a valid password legth minium of ten charaters.";
+//    inputCheckPassword.style.color = "red";
+//}else{
+//    var inputCheckPassword = document.getElementById("inputCheckPassword");
+//    inputCheckPassword.textContent = "";
+//    UpperCasePassword(password);
 //
-
-
-
-////review if (check = 'A' || check = z"") then do somehting 
-
-// check = value.charAt(0); i fcheck doesnt equall i++ for next char?
-
+//}
 //
-if (studentid.length < 8 || studentid ==="" || studentid ==="e"){
-var inputCheckStudentid = document.getElementById("inputCheckStudentid");
-
- inputCheckStudentid.textContent = "Please enter a valid StudentID, it must be 9 digits long"
- inputCheckStudentid.style.color = "red"
- checkDigit(studentid);
-}else{
-    checkDigit(studentid);
-}
-
-
-
-
-
-
-
-    
-function checkDigit(studentid){
- 
-var startNumber;
-var endNumber;
-var checkID;
-checkID = studentid;
-startNumber = "0";
-endNumber = "9";
-var inputCheckStudentID = document.getElementById("correctOutputStudentID");
-if ( checkID >= startNumber|| checkID <= endNumber){
-   
-    
-   correctOutputStudentID.textContent = "Valid  password.";
-   correctOutputStudentID.style.color = "green";
-   
-}else{
-   console.log("No number here");
-
-}// double check the to make sure that a number was entered.
-
 //
-//correctOutput=document.getElementById("correctOutputPassword");
-//   correctOutput.textContent = "Valid  password.";
-//   correctOutput.style.color = "green";
+//function UpperCasePassword(value){
+//    checkArrayName = value;
+//    list ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//    check = value.charAt(0);
+//    upperCase = false;
+//    i=0;
+//for (;i<list.length;){
+//    if (check === list.charAt(i)){
+//        result = list.charAt(i);
+//        upperCase = true;
+//        break;
+//    }
+//    i++;
+//}
+//if (upperCase == true)
+//{
+//
+//    error = document.getElementById("error");
+//    error.style.color = "red";
+//    error.innerHTML = "Error please enter a capital letter at the beginning.";
+//
+//}else{
+//
+//    correctOutput=document.getElementById("correctOutputPassword");
+//    correctOutput.textContent = "Valid  password.";
+//    correctOutput.style.color = "green";
+//    error = document.getElementById("error");
+//    error = innerHTML ="";
+//}
+//}// end of password validation
+////
+//
+//
+//
+//////review if (check = 'A' || check = z"") then do somehting 
+//
+//// check = value.charAt(0); i fcheck doesnt equall i++ for next char?
+//
+////
+//if (studentid.length < 8 || studentid ==="" || studentid ==="e"){
+//var inputCheckStudentid = document.getElementById("inputCheckStudentid");
+//var inputCheckStudentID = document.getElementById("correctOutputStudentID");
+//
+// inputCheckStudentid.textContent = "Please enter a valid StudentID, it must be 9 digits long"
+// inputCheckStudentid.style.color = "red"
+// correctOutputStudentID.textContent = "";
+//}else{
+//    checkDigit(studentid);
+//}
 //
 //
 //
 //
-
-
-
-
-
-
-
- 
-function checkChar(value){
-var startChar;
-var endChar;
-var checkChar;
-checkChar = value;
-startChar = "!";
-endChar = "@";// double check based of the ascii table 
-
-if (checkChar >= startChar || checkChar <= endChar){
-console.log("");
-
-}else{
-
-
-}
-
-
-
-}
+//
+//
+//
+//    
+//function checkDigit(studentid){
+// 
+//var startNumber;
+//var endNumber;
+//var checkID;
+//checkID = studentid;
+//startNumber = "0";
+//endNumber = "9";
+//
+////is checID a number 
+//var inputCheckStudentid = document.getElementById("inputCheckStudentid");
+//var inputCheckStudentID = document.getElementById("correctOutputStudentID");
+//if ( checkID >= startNumber|| checkID <= endNumber){
+//   
+//   inputCheckStudentid.textContent = "";
+//   correctOutputStudentID.textContent = "Valid  password.";
+//   correctOutputStudentID.style.color = "green";
+//   
+//}else{
+//   correctOutputStudentID.textContent = "ERROR";
+//   correctOutputStudentID.style.color = "red";
+//
+//}// double check the to make sure that a number was entered.
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// 
+//function checkChar(value){
+//var startChar;
+//var endChar;
+//var checkChar;
+//checkChar = value;
+//startChar = "!";
+//endChar = "@";// double check based of the ascii table 
+//
+//if (checkChar >= startChar || checkChar <= endChar){
+//console.log("");
+//
+//}else{
+//
+//
+//}
+//
+//
+//
+//}
 
 
 
@@ -270,7 +278,7 @@ console.log("");
 
 
 
-}// end of checking
+//}// end of checking
 
 function DisplayOutput(name,password,studentid,semester,year){
 // >> Output to the div with the id "output"
@@ -301,7 +309,7 @@ output.innerHTML =
         <div id="correctOutputPassword"></div>
         </br>
         </br>
-        Enter your StudentID for CSUN:<input type="number" placeholder="StudentID" id="StudentID"></input>
+        Enter your StudentID for CSUN:<input type="text" placeholder="StudentID" id="StudentID" maxlength="9"></input>
         <div id=inputCheckStudentid></div>
         <div id="inputCheckStudentIDCorrect"></div> <!--fix-->
         <div id="correctOutputStudentID"></div>
@@ -314,7 +322,7 @@ output.innerHTML =
         </br>
         </br> 
         <input type="button" value="Submit" id="submitbutton" ></input>    
-        <input type="button" onclick=location="lab2.html">Refresh</input> <!--remove later -->   
+        <input type="button" value="Refresh" onclick=location="lab2.html"></input> <!--remove later -->   
 
 
     </form>
