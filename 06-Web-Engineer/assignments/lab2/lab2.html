@@ -51,15 +51,7 @@ function checking(name,password,studentid,semester,year){
 var inputCheckUsername;
 var inputCheckUsernameCorrect;
 //#####uppercase#####
-var checkArrayName;
-var list;
-var i;
-var check;
-var upperCase;
-var error;
-var result;
 var value;
-
 // #### Username Check ####
 if (name === "" || name === "null"){
     inputCheckUsername = document.getElementById("inputCheckUsername");
@@ -81,31 +73,25 @@ else{
 
 
 function UpperCase(value){
-    j=0;
-    //result = "helloworld"
-    checkArrayName = value;
-    list ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    check = value.charAt(j);//C
+var check;
+var upperCase;
+var error;
+
+upperCase = false;
+check = value;
+if(check == 'a' || check == 'z'){
+
     upperCase = false;
-    check = value.charAt(j);//C
-    i=0;
-    
-    for (;i<list.length;){
-        if (check === list.charAt(i)){
-            result = list.charAt(i);
-            //console.log(result);//C is displayed
-            upperCase = true;
-            //break;
+}
 
-        }
+if (check = 'A' || check == 'Z'){
 
-        check = value.charAt(j);//C
-        i++;
-        j++;
-        //console.log(check);
-        //console.log(result + "Results")
-    
-    }
+    console.log("ERROR");
+    upperCase = true;
+}
+
+
+            
     if (upperCase == true)
     {
         correctOutput=document.getElementById("correctOutput");
