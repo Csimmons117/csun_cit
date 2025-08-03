@@ -30,17 +30,25 @@
             var studentid = document.getElementById("StudentID").value;
             var semester = document.getElementById("semester").value;
             var year = document.getElementById("year").value;
+            var message = document.getElementById("message").value;
+            var wordCount = document.getElementById("wordCount").value;
 
-            checking(name, password, studentid, semester, year); //fix later
+            checking(name, password, studentid, semester, year);
+
+            
 
             DisplayOutput(name, password, studentid, semester, year);
+
+
+
+
         } //end of main function
 
         //=====================Functions below============================// 
 
 
 
-        function checking(name, password, studentid, semester, year) {
+        function checking(name, password, studentid, semester, year, message, wordCount) {
             //## checker for empty or null text box##
             var inputCheckUsername;
             var inputCheckUsernameCorrect;
@@ -99,6 +107,12 @@
             // #### Password Check ####
             if (password.length < 10) {
                 var inputCheckPasswordLength = document.getElementById("inputCheckPasswordLength");
+                
+                UpperCasePassword(password);
+                LowerCase(password);
+                checkDigit(password);
+
+                
 
 
                 inputCheckPasswordLength.textContent = "Please enter a valid password legth minimum of ten charaters.";
@@ -108,96 +122,267 @@
                 inputCheckPasswordLength.textContent = "";
                 UpperCasePassword(password);
                 LowerCase(password);
-                console.log("testing1");
                 checkDigit(password);
 
             }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-            //#### ######## ####### WORKING ABOVE######## #################
+            
 
             //##Stduent ID checking?
             if (studentid.length < 8 || studentid === "" || studentid === "e") {
                 var inputCheckStudentid = document.getElementById("inputCheckStudentid");
-                var inputCheckStudentID = document.getElementById("correctOutputStudentID");
-
                 inputCheckStudentid.textContent = "Please enter a valid StudentID, it must be 9 digits long"
                 inputCheckStudentid.style.color = "red"
-                correctOutputStudentID.textContent = "";
+                
             } else {
-                checkDigit(studentid);
+                var inputCheckStudentid = document.getElementById("inputCheckStudentid");
+                inputCheckStudentid.textContent = ""
+                checkDigitstudentID(studentid);
             }
 
-            function checkDigit(studentid) {
-                var check = studentid;
+
+            function checkDigitstudentID(value) {
+                var check = value;
+                var numberCheck;
+                var k;
+                var correctStudentID = document.getElementById("correctStudentID");
+                correctStudentID.style.color = "green";
+                var studentidError = document.getElementById("studentidError");
+                studentidError.style.color = "red";
+                
+                
+
+
+            list = "0123456789";
+            numberFound = false;
+
+            for (i = 0; i < check.length; i++) {
+                currentValue = check.charAt(i);
+
+                for (j = 0; j < list.length; j++) {
+
+                    if (currentValue === list.charAt(j)) {
+                        numberFound = true;
+                       
+                        break;
+                    }
+                }
+                
+                if (numberFound) {
+                    
+                    break;
+                }
+            }
+            
+            if(numberFound == true) {
+                correctStudentID.innerHTML = "Student ID has a nine numbers."
+                studentidError.textContent = "";
+
+
+            } else {
+                studentidError.textContent = "Error password must contain a number.";
+                correctStudentID.innerHTML = "";
+            }
+                
+
+                
+                
+            }// end of check digit password
+
+            function checkDigit(value) {
+                var check = value;
                 var numberCheck;
                 var k;
                 var numbercorrect = document.getElementById("numbercorrect");
                 numbercorrect.style.color = "green";
                 var numberError = document.getElementById("numberError");
                 numberError.style.color = "red";
-                numberError.textContent = "Error password must contain a number.";
 
-                for (k=0;k<check.length;k++){
-                    
-                    numberCheck = check.charAt(k);
-                    console.log(numberCheck);
-                    if (numberCheck === "0"){numbercorrect.textContent = "Password contains a number.";
-                                             numberError.textContent = ""; break;}
-                    if (numberCheck === "1"){numbercorrect.textContent = "Password contains a number.";
-                                              numberError.textContent = ""; break;}
-                    if (numberCheck === "2"){numbercorrect.textContent = "Password contains a number.";
-                                              numberError.textContent = ""; break;}
-                    if (numberCheck === "3"){numbercorrect.textContent = "Password contains a number.";
-                                              numberError.textContent = ""; break;}
-                    if (numberCheck === "4"){numbercorrect.textContent = "Password contains a number.";
-                                              numberError.textContent = ""; break;}
-                    if (numberCheck === "5"){numbercorrect.textContent = "Password contains a number.";
-                                              numberError.textContent = ""; break;}
-                    if (numberCheck === "6"){numbercorrect.textContent = "Password contains a number.";
-                                              numberError.textContent = ""; break;}
-                    if (numberCheck === "7"){numbercorrect.textContent = "Password contains a number.";
-                                              numberError.textContent = ""; break;}
-                    if (numberCheck === "8"){numbercorrect.textContent = "Password contains a number.";
-                                              numberError.textContent = ""; break;}
-                    if (numberCheck === "9"){numbercorrect.textContent = "Password contains a number.";
-                                              numberError.textContent = ""; break;}
-                     
+                
 
 
+            list = "0123456789";
+            numberFound = false;
+
+            for (i = 0; i < check.length; i++) {
+                currentValue = check.charAt(i);
+
+                for (j = 0; j < list.length; j++) {
+
+                    if (currentValue === list.charAt(j)) {
+                        numberFound = true;
+                       
+                        break;
+                    }
                 }
+                
+                if (numberFound) {
+                    
+                    break;
+                }
+            }
+            
+            if(numberFound == true) {
+                numbercorrect.innerHTML = "Password has a number."
+                numberError.textContent = "";
+
+
+            } else {
+                numberError.textContent = "Error password must contain a number.";
+                numbercorrect.innerHTML = "";
+            }
+                
+
+                
                 
             }// end of check digit
 
-            if (semester === "" || semester === "null") {
-                var inputCheckSemester = document.getElementById("inputCheckSemester");
 
-                inputCheckSemester.textContent = "Please enter a valid semester"
-                inputCheckSemester.style.color = "red"
+
+
+
+            if (semester === "" || semester === "null") {        
+                var inputCheckSemester = document.getElementById("inputCheckSemester");
+                inputCheckSemester.textContent = "Please enter a valid semester term. Example: Fall, Spring, Winter, and Summer.";
+                inputCheckSemester.style.color = "red";
+
+                var errorSemester = document.getElementById("errorSemester");
+                errorSemester.textContent = "";
+
+
+                var correctSemester = document.getElementById("correctSemester");
+                correctSemester.textContent = ""
+    
+
+            }else{
+                if (semester === "Fall" || semester ==="fall"){
+                    var correctSemester = document.getElementById("correctSemester");
+                    correctSemester.textContent = "The Semester term that was entered is correct."
+                    correctSemester.style.color = "green";
+
+                    var errorSemester = document.getElementById("errorSemester");
+                    errorSemester.textContent = "";
+
+                    var inputCheckSemester = document.getElementById("inputCheckSemester");
+                    inputCheckSemester.textContent = "";
+
+                }else if (semester === "Spring" || semester ==="spring"){
+                    var correctSemester = document.getElementById("correctSemester");
+                    correctSemester.textContent = "The Semester term that was entered is correct."
+                    correctSemester.style.color = "green";
+
+                    var errorSemester = document.getElementById("errorSemester");
+                    errorSemester.textContent = "";
+
+                    var inputCheckSemester = document.getElementById("inputCheckSemester");
+                    inputCheckSemester.textContent = "";
+
+                }else if (semester === "Winter" || semester ==="winter"){
+                    var correctSemester = document.getElementById("correctSemester");
+                    correctSemester.textContent = "The Semester term that was entered is correct."
+                    correctSemester.style.color = "green";
+
+                    var errorSemester = document.getElementById("errorSemester");
+                    errorSemester.textContent = "";
+
+                    var inputCheckSemester = document.getElementById("inputCheckSemester");
+                    inputCheckSemester.textContent = "";
+
+                }else if (semester === "Summer" || semester ==="summer"){
+                    var correctSemester = document.getElementById("correctSemester");
+                    correctSemester.textContent = "The Semester term that was entered is correct."
+                    correctSemester.style.color = "green";
+
+                    var errorSemester = document.getElementById("errorSemester");
+                    errorSemester.textContent = "";
+
+                    var inputCheckSemester = document.getElementById("inputCheckSemester");
+                    inputCheckSemester.textContent = "";
+
+                }else{
+                    var errorSemester = document.getElementById("errorSemester");
+                    errorSemester.textContent = "The semester term you entered was incorrect please enter a correct semester term.";
+                    errorSemester.style.color = "red";
+    
+                    var correctSemester = document.getElementById("correctSemester");
+                    correctSemester.textContent = "";
+
+                    var inputCheckSemester = document.getElementById("inputCheckSemester");
+                    inputCheckSemester.textContent = "";
+                }
             }
 
             if (year === "" || year === "null") {
                 var inputCheckYear = document.getElementById("inputCheckYear");
-
-                inputCheckYear.textContent = "Please enter a valid year"
+                inputCheckYear.textContent = "Please enter a valid year, Example: 2002"
                 inputCheckYear.style.color = "red"
+
+                var correctYear = document.getElementById("correctYear");
+                correctYear.innerHTML = "";
+                var errorYear = document.getElementById("errorYear");
+                errorYear.textContent = "";
+            }else{
+
+                checkDigityear(year);
             }
 
         
         }
 
+
+
+
+        function checkDigityear(value) {
+                var check = value;
+                var numberCheck;
+                var k;
+                var correctYear = document.getElementById("correctYear");
+                correctYear.style.color = "green";
+                var errorYear = document.getElementById("errorYear");
+                errorYear.style.color = "red";
+                var inputCheckYear = document.getElementById("inputCheckYear");
+                inputCheckYear.textContent = "Please enter a valid year, Example: 2002"
+                inputCheckYear.style.color = "red"
+                
+
+
+            list = "0123456789";
+            numberFound = false;
+
+            for (i = 0; i < check.length; i++) {
+                currentValue = check.charAt(i);
+
+                for (j = 0; j < list.length; j++) {
+
+                    if (currentValue === list.charAt(j)) {
+                        numberFound = true;
+                       
+                        break;
+                    }
+                }
+                
+                if (numberFound) {
+                    
+                    break;
+                }
+            }
+            
+            if(numberFound == true) {
+                correctYear.innerHTML = "You have entered a valid year."
+                errorYear.textContent = "";
+                inputCheckYear.textContent = "";
+
+
+            } else {
+                errorYear.textContent = "Error not a numbered year. Example: 2002";
+                correctYear.innerHTML = "";
+                inputCheckYear.textContent = "";
+            }
+                
+
+                
+                
+            }// end of check digit year
 
 
 
@@ -297,9 +482,9 @@
             } else {
                 //output text
                 //bad
-                upperError = document.getElementById("upperError");
-                upperError.textContent = "Error Need to add a Uppercase letter to your password";
-                inputCheckPassword.style.color = "red";
+                var upperError = document.getElementById("upperError");
+                upperError.textContent = "Error Need to add a Uppercase letter to your password.";
+                upperError.style.color = "red";
 
 
 
@@ -308,16 +493,6 @@
                 uppercorrect.textContent = "";
             }
             } // end of UpperCasePassword validation
-
-
-
-
-
-
-
-
-
-
 
         function LowerCase(value){
             var lowerCase;
@@ -346,17 +521,21 @@
             
             if(lowerCase == true) {
                 //output text
-                //GOOD 
+                //GOOD
+                var lowerError = document.getElementById("lowerError"); 
                 var lowercorrect = document.getElementById("lowercorrect");
-                lowercorrect.innerHTML = "Password has a lowercase letter."
+                lowercorrect.textContent = "Password has a lowercase letter.";
                 lowercorrect.style.color = "green";
+                lowerError.textContent = "";
 
             } else {
                 //output text
                 //bad
                 var lowerError = document.getElementById("lowerError");
+                var lowercorrect = document.getElementById("lowercorrect");
                 lowerError.textContent = "Error need to add a lowercase letter to your password";
                 lowerError.style.color = "red";
+                lowercorrect.textContent = "";
             }
 
 
@@ -392,7 +571,7 @@
         Enter your password for CSUN:<input type="Password" placeholder="Password" id="Password"></input>
         <div id="uppercorrect"></div>
         <div id="lowercorrect"></div>
-         <div id="numbercorrect"></div>
+        <div id="numbercorrect"></div>
         <div id="upperError"></div>
         <div id="lowerError"></div>
         <div id="numberError"></div>
@@ -402,16 +581,30 @@
         </br>
         Enter your StudentID for CSUN:<input type="text" placeholder="StudentID" id="StudentID" maxlength="9"></input>
         <div id=inputCheckStudentid></div>
-        <div id="inputCheckStudentIDCorrect"></div> <!--fix-->
-        <div id="correctOutputStudentID"></div>
+
+        <div id="studentidError"></div>
+        <div id="correctStudentID"></div>
         </br>
         </br>   
-        Enter your semester/year for CSUN:<input type="text" placeholder="Semester" id="semester"></input><input type="number" placeholder="Year" id="year"></input>
-        <div id=inputCheckSemester></div>
-        <div id=inputCheckYear></div>
-        <div id="inputCheckSemesterYearCorrect"></div> <!--fix-->
+        Enter your semester/year for CSUN:<input type="text" placeholder="Semester" id="semester"></input>
+        <input type="text" placeholder="Year" id="year" maxlength="4"></input>
+        <div id="inputCheckSemester"></div>
+        <div id="correctSemester"></div>
+        <div id="errorSemester"></div>
+
+        <div id="inputCheckYear"></div>
+        <div id="correctYear"></div>
+        <div id="errorYear"></div>
         </br>
         </br> 
+
+        <label for="message">Enter Message Here (Max 25 words):</label>
+        </br>
+        <textarea id="message" placeholder="Type your message..."></textarea>
+        <div>Words left: <div id="wordCount">25</div></div>
+
+        </br>
+        </br>
         <input type="button" value="Submit" id="submitbutton" ></input>    
         <input type="button" value="Refresh" onclick=location="lab2.html"></input> <!--remove later -->   
 
