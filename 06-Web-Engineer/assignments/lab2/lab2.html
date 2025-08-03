@@ -85,20 +85,25 @@ function UpperCase(value){
     check = value;
     list ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     upperCase = false;
-    i=0;
-    j=0;
-                                        //                  0                 6
-for (;i<check.length;){                 //                  0  1  2  3  4  5  6
-    var currentValue = check.charAt(i);// input = Cameron = C, A, M, E, R, O, N
-    console.log(currentValue);
-           
-           if(j<list.length){
-            console.log(list.charAt(j))
+  
+    
+                                      
+for (i=0;i<check.length;i++){
+    currentValue=check.charAt(i);
+
+        for(j=0;j<list.length;j++){
+            
+            if (currentValue === list.charAt(j)){
+                upperCase = true;
+                break;
+            }
 
            }
+    if(upperCase){
+        break;
+       }
+      } 
 
-      i++;  } 
-        
 
     
 
@@ -108,6 +113,9 @@ if (upperCase == true)
     error = document.getElementById("error");
     error.style.color = "red";
     error.innerHTML = "Error please Dont enter a capital letter.";
+    correctOutput=document.getElementById("correctOutput");
+    correctOutput.textContent = "";
+
 
 }else{
 
