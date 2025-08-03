@@ -108,7 +108,9 @@
                 inputCheckPasswordLength.textContent = "";
                 UpperCasePassword(password);
                 LowerCase(password);
+                console.log("testing1");
                 checkDigit(password);
+
             }
 
 
@@ -139,29 +141,44 @@
             }
 
             function checkDigit(studentid) {
+                var check = studentid;
+                var numberCheck;
+                var k;
+                var numbercorrect = document.getElementById("numbercorrect");
+                numbercorrect.style.color = "green";
+                var numberError = document.getElementById("numberError");
+                numberError.style.color = "red";
+                numberError.textContent = "Error password must contain a number.";
 
-                var startNumber;
-                var endNumber;
-                var checkID;
-                checkID = studentid;
-                startNumber = "0";
-                endNumber = "9";
+                for (k=0;k<check.length;k++){
+                    
+                    numberCheck = check.charAt(k);
+                    console.log(numberCheck);
+                    if (numberCheck === "0"){numbercorrect.textContent = "Password contains a number.";
+                                             numberError.textContent = ""; break;}
+                    if (numberCheck === "1"){numbercorrect.textContent = "Password contains a number.";
+                                              numberError.textContent = ""; break;}
+                    if (numberCheck === "2"){numbercorrect.textContent = "Password contains a number.";
+                                              numberError.textContent = ""; break;}
+                    if (numberCheck === "3"){numbercorrect.textContent = "Password contains a number.";
+                                              numberError.textContent = ""; break;}
+                    if (numberCheck === "4"){numbercorrect.textContent = "Password contains a number.";
+                                              numberError.textContent = ""; break;}
+                    if (numberCheck === "5"){numbercorrect.textContent = "Password contains a number.";
+                                              numberError.textContent = ""; break;}
+                    if (numberCheck === "6"){numbercorrect.textContent = "Password contains a number.";
+                                              numberError.textContent = ""; break;}
+                    if (numberCheck === "7"){numbercorrect.textContent = "Password contains a number.";
+                                              numberError.textContent = ""; break;}
+                    if (numberCheck === "8"){numbercorrect.textContent = "Password contains a number.";
+                                              numberError.textContent = ""; break;}
+                    if (numberCheck === "9"){numbercorrect.textContent = "Password contains a number.";
+                                              numberError.textContent = ""; break;}
+                     
 
-                //is checID a number 
-                var inputCheckStudentid = document.getElementById("inputCheckStudentid");
-                var inputCheckStudentID = document.getElementById("correctOutputStudentID");
-                if (checkID >= startNumber || checkID <= endNumber) {
 
-                    inputCheckStudentid.textContent = "";
-                    correctOutputStudentID.textContent = "Valid  password.";
-                    correctOutputStudentID.style.color = "green";
-
-                } else {
-                    correctOutputStudentID.textContent = "ERROR";
-                    correctOutputStudentID.style.color = "red";
-
-                } // double check the to make sure that a number was entered.
-
+                }
+                
             }// end of check digit
 
             if (semester === "" || semester === "null") {
@@ -375,9 +392,12 @@
         Enter your password for CSUN:<input type="Password" placeholder="Password" id="Password"></input>
         <div id="uppercorrect"></div>
         <div id="lowercorrect"></div>
+         <div id="numbercorrect"></div>
         <div id="upperError"></div>
         <div id="lowerError"></div>
+        <div id="numberError"></div>
         <div id="inputCheckPasswordLength"></div>
+
         </br>
         </br>
         Enter your StudentID for CSUN:<input type="text" placeholder="StudentID" id="StudentID" maxlength="9"></input>
