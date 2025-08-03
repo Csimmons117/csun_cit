@@ -51,7 +51,16 @@ function checking(name,password,studentid,semester,year){
 var inputCheckUsername;
 var inputCheckUsernameCorrect;
 //#####uppercase#####
+var checkArrayName;
+var list;
+var i;
+var j;
+var check;
+var upperCase;
+var error;
+var result;
 var value;
+
 // #### Username Check ####
 if (name === "" || name === "null"){
     inputCheckUsername = document.getElementById("inputCheckUsername");
@@ -73,48 +82,45 @@ else{
 
 
 function UpperCase(value){
-var check;
-var upperCase;
-var error;
-
-upperCase = false;
-check = value;
-if(check == 'a' || check == 'z'){
-
+    check = value;
+    list ="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     upperCase = false;
+    i=0;
+    j=0;
+                                        //                  0                 6
+for (;i<check.length;){                 //                  0  1  2  3  4  5  6
+    var currentValue = check.charAt(i);// input = Cameron = C, A, M, E, R, O, N
+    console.log(currentValue);
+           
+           if(j<list.length){
+            console.log(list.charAt(j))
+
+           }
+
+      i++;  } 
+        
+
+    
+
+if (upperCase == true)
+{
+
+    error = document.getElementById("error");
+    error.style.color = "red";
+    error.innerHTML = "Error please Dont enter a capital letter.";
+
+}else{
+
+    correctOutput=document.getElementById("correctOutput");
+    correctOutput.textContent = "Valid  password.";
+    correctOutput.style.color = "green";
+    error = document.getElementById("error");
+    error = innerHTML ="";
 }
-
-if (check = 'A' || check == 'Z'){
-
-    console.log("ERROR");
-    upperCase = true;
-}
+}// end of uppercase 
 
 
-            
-    if (upperCase == true)
-    {
-        correctOutput=document.getElementById("correctOutput");
-        correctOutput.innerHTML = "";
-        error = document.getElementById("error");
-        error.style.color = "red";
-        error.innerHTML = "Error please make sure there are no capitial letters";
-
-    }else{
-       correctOutput=document.getElementById("correctOutput");
-       correctOutput.innerHTML = "Valid CSUN Username.";
-       correctOutput.style.color = "green";
-       error = document.getElementById("error");// this need to be here to output the error.innerHTML
-       error.textContent = "";
-
-
-    }
-
-}//>> Checking for upper caps in the beginning end <<
-
-
-
-
+}// end of checking right now 
 
 // #### Password Check ####
 
@@ -243,7 +249,7 @@ if (check = 'A' || check == 'Z'){
 
 
 
-}
+
 //
 //
 //if (semester === "" || semester === "null"){
