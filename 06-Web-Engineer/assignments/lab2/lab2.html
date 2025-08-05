@@ -14,11 +14,25 @@
 
 // >> Broswer finishing loading the website<<
         window.addEventListener("load", start);
+        var textarea;
 
         // >> START IS MAIN  <<
         function start() {
             var submitbutton = document.getElementById("submitbutton");
+           
             submitbutton.addEventListener("click", formSubmitted);
+            textarea =document.getElementById("message");
+            textarea.addEventListener("keypress", messageKeyTyped);
+        }
+
+
+        function messageKeyTyped(){
+            var currentText= textarea.value;
+
+            //Use split(“ “) on currentText to split into tokens…
+
+            var tokens = currentText.split("");
+
         }
 
         // >> formSubmitted gets in the start funcation gets the username value
@@ -253,7 +267,7 @@
     
 
             }else{
-                if (semester === "Fall" || semester ==="fall"){
+                if (semester === "Fall"){
                     var correctSemester = document.getElementById("correctSemester");
                     correctSemester.textContent = "The Semester term that was entered is correct."
                     correctSemester.style.color = "green";
@@ -264,18 +278,7 @@
                     var inputCheckSemester = document.getElementById("inputCheckSemester");
                     inputCheckSemester.textContent = "";
 
-                }else if (semester === "Spring" || semester ==="spring"){
-                    var correctSemester = document.getElementById("correctSemester");
-                    correctSemester.textContent = "The Semester term that was entered is correct."
-                    correctSemester.style.color = "green";
-
-                    var errorSemester = document.getElementById("errorSemester");
-                    errorSemester.textContent = "";
-
-                    var inputCheckSemester = document.getElementById("inputCheckSemester");
-                    inputCheckSemester.textContent = "";
-
-                }else if (semester === "Winter" || semester ==="winter"){
+                }else if (semester === "Spring"){
                     var correctSemester = document.getElementById("correctSemester");
                     correctSemester.textContent = "The Semester term that was entered is correct."
                     correctSemester.style.color = "green";
@@ -299,7 +302,7 @@
 
                 }else{
                     var errorSemester = document.getElementById("errorSemester");
-                    errorSemester.textContent = "The semester term you entered was incorrect please enter a correct semester term.";
+                    errorSemester.textContent = "The semester term you entered was incorrect please enter a correct semester term. Example: Fall , Spring, or Summer";
                     errorSemester.style.color = "red";
     
                     var correctSemester = document.getElementById("correctSemester");
