@@ -170,7 +170,7 @@ PS C:\Users\Cameron\Downloads> ssh ec2-user@citclassproject.com -i .\labsuser.pe
 > The page should look like this. Keep this page open and we will come back to it.
 
 <br>
-<img src="./pictures/namesserve.png" width=600px>
+<img src="./pictures/namesservers.png" width=600px>
 
 4. Now login to your AWS Canvas account.
     > If you have any problems logging please talk with the professor.
