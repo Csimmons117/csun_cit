@@ -5,14 +5,30 @@
     <head>
         <title></title>
         <style>
-            .box{
-                border: 10px,pink,solid;
+            
+            
+           .errorBackground {
+                background-color: lightpink;
+                text-size-adjust: 30px;
             }
-            .test{}
+
+            .successBackground {
+                background-color: lightgray;
+                text-size-adjust: 30px;
+            }
+
+            #wordCount {
+                display: inline;
+                font-weight: bold;
+            }
+            #statusMessage{
+                font-size: 25px;
+            }
+
         </style>
         <script>
 
-// >> Broswer finishing loading the website<<
+        // >> Broswer finishing loading the website<<
         window.addEventListener("load", start);
         var textarea;
 
@@ -31,7 +47,51 @@
 
             //Use split(“ “) on currentText to split into tokens…
 
-            var tokens = currentText.split("");
+            var tokens = currentText.split(" ");
+            var actualWords = [];
+    
+            for (var i = 0; i < tokens.length; i++) {
+                if (tokens[i] !== "") {
+                    actualWords[actualWords.length] = tokens[i]; // equivalent to .push()
+                }
+            }
+        
+            var wordsLeft = 25 - actualWords.length;
+        
+            var wordCount = document.getElementById("wordCount");
+            if (wordsLeft >= 0) {
+                wordCount.textContent = wordsLeft;
+            } else {
+                wordCount.textContent = 0;
+            }
+
+
+
+            
+            //#### CHAT GPT HELPED HERE 
+
+            if (actualWords.length < 25) {
+                // Less than 25 words — allow any key
+                // Nothing to block, so do nothing
+            }
+            else if (
+                event.key === "Backspace" ||
+                event.key === "Delete" ||
+                event.key === "ArrowLeft" ||
+                event.key === "ArrowRight"
+            ) {
+                // Word limit reached but the user is trying to edit or move the cursor — allow it
+            }
+            else {
+                // Word limit reached and user is trying to type more — block it
+                event.preventDefault();
+            }
+
+            //#### CHAT GPT HELP ENDED HERE
+
+
+
+
 
         }
 
@@ -49,9 +109,28 @@
 
             checking(name, password, studentid, semester, year);
 
+            // testing the add and remove 
 
+            let hasError = checking(name, password, studentid, semester, year, message, wordCount);
 
-            DisplayOutput(name, password, studentid, semester, year);
+                // God please work
+                var formContainer = document.getElementById("formContainer");
+                var statusMessage = document.getElementById("statusMessage");
+                
+                if (hasError) {
+                    formContainer.classList.add("errorBackground");
+                    formContainer.classList.remove("successBackground");
+                    statusMessage.textContent = "Form submission failed. Please fix the errors.";
+                    statusMessage.style.color = "red";
+                } else {
+                    formContainer.classList.add("successBackground");
+                    formContainer.classList.remove("errorBackground");
+                    statusMessage.textContent = "Form submitted successfully!";
+                    statusMessage.style.color = "green";
+
+                }
+
+           // DisplayOutput(name, password, studentid, semester, year);
 
 
 
@@ -61,6 +140,8 @@
         //=====================Functions below============================// 
 
         function checking(name, password, studentid, semester, year, message, wordCount) {
+
+            let hasError = false; //testing change color 
             //## checker for empty or null text box##
             var inputCheckUsername;
             var inputCheckUsernameCorrect;
@@ -87,7 +168,7 @@
                 error = document.getElementById("error");
                 error.innerHTML = "";
 
-
+                hasError = true; //dont move testing 
 
                 correctOutput = document.getElementById("correctOutput");
                 correctOutput.textContent = "";
@@ -100,7 +181,7 @@
                 inputCheckUsername1 = document.getElementById("inputCheckUsername1");
                 inputCheckUsername1.textContent = "";
 
-
+                hasError = true; 
                 error = document.getElementById("error");
                 error.innerHTML = "";
 
@@ -111,7 +192,12 @@
             }else{
 
                 UpperCase(name);
+                
+
+
             }
+
+
             
             //### Above works dont touch ###
 
@@ -129,6 +215,7 @@
 
                 inputCheckPasswordLength.textContent = "Please enter a valid password legth minimum of ten charaters.";
                 inputCheckPasswordLength.style.color = "red";
+                hasError = true; 
             }else{
                 inputCheckPasswordLength = document.getElementById("inputCheckPasswordLength");
                 inputCheckPasswordLength.textContent = "";
@@ -145,6 +232,10 @@
                 var inputCheckStudentid = document.getElementById("inputCheckStudentid");
                 inputCheckStudentid.textContent = "Please enter a valid StudentID, it must be 9 digits long"
                 inputCheckStudentid.style.color = "red"
+                var inputCheckStudentid = document.getElementById("inputCheckStudentid");
+                correctStudentID.innerHTML = "";
+                hasError = true; 
+                
                 
             } else {
                 var inputCheckStudentid = document.getElementById("inputCheckStudentid");
@@ -161,7 +252,8 @@
                 correctStudentID.style.color = "green";
                 var studentidError = document.getElementById("studentidError");
                 studentidError.style.color = "red";
-                
+                var hasError = true;
+
                 
 
 
@@ -187,13 +279,20 @@
             }
             
             if(numberFound == true) {
+                var inputCheckStudentid = document.getElementById("inputCheckStudentid");
+                inputCheckStudentid.textContent = "";
                 correctStudentID.innerHTML = "Student ID has a nine numbers."
                 studentidError.textContent = "";
+                hasError = false; 
+                return hasError;
 
 
             } else {
                 studentidError.textContent = "Error password must contain a number.";
                 correctStudentID.innerHTML = "";
+
+                hasError = true; 
+                return hasError;
             }
                 
 
@@ -209,7 +308,7 @@
                 numbercorrect.style.color = "green";
                 var numberError = document.getElementById("numberError");
                 numberError.style.color = "red";
-
+                var hasError = true;
                 
 
 
@@ -237,11 +336,15 @@
             if(numberFound == true) {
                 numbercorrect.innerHTML = "Password has a number."
                 numberError.textContent = "";
+                hasError = false;
+                return hasError;
 
 
             } else {
                 numberError.textContent = "Error password must contain a number.";
                 numbercorrect.innerHTML = "";
+                hasError = true;
+                return hasError;
             }
                 
 
@@ -264,13 +367,15 @@
 
                 var correctSemester = document.getElementById("correctSemester");
                 correctSemester.textContent = ""
-    
+                hasError = true;
+                
 
             }else{
                 if (semester === "Fall"){
                     var correctSemester = document.getElementById("correctSemester");
                     correctSemester.textContent = "The Semester term that was entered is correct."
                     correctSemester.style.color = "green";
+                    hasError = false;
 
                     var errorSemester = document.getElementById("errorSemester");
                     errorSemester.textContent = "";
@@ -282,18 +387,18 @@
                     var correctSemester = document.getElementById("correctSemester");
                     correctSemester.textContent = "The Semester term that was entered is correct."
                     correctSemester.style.color = "green";
-
+                    hasError = false;
                     var errorSemester = document.getElementById("errorSemester");
                     errorSemester.textContent = "";
 
                     var inputCheckSemester = document.getElementById("inputCheckSemester");
                     inputCheckSemester.textContent = "";
 
-                }else if (semester === "Summer" || semester ==="summer"){
+                }else if (semester === "Summer"){
                     var correctSemester = document.getElementById("correctSemester");
                     correctSemester.textContent = "The Semester term that was entered is correct."
                     correctSemester.style.color = "green";
-
+                    hasError = false;
                     var errorSemester = document.getElementById("errorSemester");
                     errorSemester.textContent = "";
 
@@ -310,6 +415,7 @@
 
                     var inputCheckSemester = document.getElementById("inputCheckSemester");
                     inputCheckSemester.textContent = "";
+                     hasError = true;
                 }
             }
 
@@ -317,7 +423,7 @@
                 var inputCheckYear = document.getElementById("inputCheckYear");
                 inputCheckYear.textContent = "Please enter a valid year, Example: 2002"
                 inputCheckYear.style.color = "red"
-
+                 hasError = true;
                 var correctYear = document.getElementById("correctYear");
                 correctYear.innerHTML = "";
                 var errorYear = document.getElementById("errorYear");
@@ -327,8 +433,13 @@
                 checkDigityear(year);
             }
 
+
+
+
+            return hasError;
+
         
-        }
+        }// end of checking
 
 
 
@@ -344,6 +455,7 @@
                 var inputCheckYear = document.getElementById("inputCheckYear");
                 inputCheckYear.textContent = "Please enter a valid year, Example: 2002"
                 inputCheckYear.style.color = "red"
+                var  hasError = false;
                 
 
 
@@ -372,12 +484,16 @@
                 correctYear.innerHTML = "You have entered a valid year."
                 errorYear.textContent = "";
                 inputCheckYear.textContent = "";
+                hasError = false;
+                return hasError;
 
 
             } else {
                 errorYear.textContent = "Error not a numbered year. Example: 2002";
                 correctYear.innerHTML = "";
                 inputCheckYear.textContent = "";
+                 hasError = true;
+                 return hasError;
             }
                 
 
@@ -393,6 +509,7 @@
             check = value;
             list = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             upperCase = false;
+            var  hasError = false;
 
             for (i = 0; i < check.length; i++) {
                 currentValue = check.charAt(i);
@@ -420,7 +537,7 @@
                 correctOutput.textContent = "";
                 inputCheckUsername1 = document.getElementById("inputCheckUsername1");
                 inputCheckUsername1.textContent = "";
-
+                hasError = true;
                 inputCheckUsername2 = document.getElementById("inputCheckUsername2");
                 inputCheckUsername2.textContent = "";
 
@@ -431,7 +548,7 @@
                 correctOutput.style.color = "green";
                 error = document.getElementById("error");
                 error.innerHTML = "";
-
+                hasError = false;
                 inputCheckUsername1 = document.getElementById("inputCheckUsername1");
                 inputCheckUsername1.textContent = "";
 
@@ -449,6 +566,9 @@
             check = value;
             list = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             upperCase = false;
+            var  hasError = false;
+
+
             for (i = 0; i < check.length; i++) {
                 currentValue = check.charAt(i);
 
@@ -474,7 +594,7 @@
                 var uppercorrect = document.getElementById("uppercorrect");
                 uppercorrect.textContent = "Password has a Uppercase letter.";
                 uppercorrect.style.color = "green";
-
+                hasError = true;
 
                 var upperError = document.getElementById("upperError");
                 upperError.textContent = "";
@@ -486,6 +606,7 @@
                 var upperError = document.getElementById("upperError");
                 upperError.textContent = "Error Need to add a Uppercase letter to your password.";
                 upperError.style.color = "red";
+                hasError = false;
 
 
 
@@ -501,6 +622,7 @@
             check = value;
             list = "abcdefghijklmnopqrstuvwxyz";
             lowerCase = false;
+            var hasError = false;
 
             for (i = 0; i < check.length; i++) {
                 currentValue = check.charAt(i);
@@ -528,6 +650,8 @@
                 lowercorrect.textContent = "Password has a lowercase letter.";
                 lowercorrect.style.color = "green";
                 lowerError.textContent = "";
+                hasError = false;
+
 
             } else {
                 //output text
@@ -537,6 +661,7 @@
                 lowerError.textContent = "Error need to add a lowercase letter to your password";
                 lowerError.style.color = "red";
                 lowercorrect.textContent = "";
+                hasError = true;
             }
 
 
@@ -544,16 +669,21 @@
         }//end of lowercase
 
 
-        function DisplayOutput(name, password, studentid, semester, year) {
-            // >> Output to the div with the id "output"
-            var output = document.getElementById("output");
-            output.innerHTML =
-                "Username: " + name + " <br> " +
-                "Password: " + password + " <br> " +
-                "StudentID: " + studentid + " <br> " +
-                "Semester: " + semester + " <br> " +
-                "Year: " + year + " <br> ";
-        }
+        // change background color to light pink if one or more fields are wrong 
+
+        // If all fields are success make success appear on the screen
+
+
+        //function DisplayOutput(name, password, studentid, semester, year) {
+        //    // >> Output to the div with the id "output"
+        //    var output = document.getElementById("output");
+        //    output.innerHTML =
+        //        "Username: " + name + " <br> " +
+        //        "Password: " + password + " <br> " +
+        //        "StudentID: " + studentid + " <br> " +
+        //        "Semester: " + semester + " <br> " +
+        //        "Year: " + year + " <br> ";
+        //}
 
 
 
@@ -561,6 +691,7 @@
     </head>
 <body>
     <h1>Lab2 testing</h1>
+<div id="formContainer"><!--Start of change color div-->
     <form>
         Enter your username for CSUN:<input type="text" placeholder="Username" id="Username"></input>
         <div id="inputCheckUsername1"></div>
@@ -607,16 +738,16 @@
         </br>
         </br>
         <input type="button" value="Submit" id="submitbutton" ></input>    
-        <input type="button" value="Refresh" onclick=location="lab2.html"></input> <!--remove later -->   
+         
 
 
     </form>
-
+    <h5 id="statusMessage"></h5>
     
     <!-- Added this div to show the output -->
     <div id="output" class="box"></div>
 
-
+</div><!--change color div test -->
 </body>
 
 </html>
