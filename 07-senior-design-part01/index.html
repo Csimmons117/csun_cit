@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head><title></title>
+<script>
+    window.addEventListener("load",start);
+    function start(){
+        console.log("Hello World");
+
+        const submissionButton=document.getElementsByClassName("submitButton");
+        for (const button of submissionButton){
+            button.addEventListener("click", formSubmitted);
+        }
+    }
+
+    function formSubmitted(){
+        const userOutput = document.getElementsByClassName("userOutput")[0];
+        const user = document.getElementsByClassName("userName")[0].value;
+
+        //userOutput.textContent= "Hello " + user + "!";
+        //Check user name\
+        capsCheck = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";//26 
+        
+       
+
+        for (let i = 0 ;i < capsCheck.length; i++)
+        {
+            userOutput.textContent += capsCheck[i];
+            
+           //for ( ;j <user.length; j++ )
+           //{
+           //    if (user.length[j]==capsCheck.length[i]){
+           //        result = i;
+           //        break;
+           //    }
+           //}
+        }
+        //userOutput.textContent = result;
+        return 1;
+    }
+
+
+</script>
+
+</head>
+
+
+<body>
+<h1>Hello world!</h1>
+<div>
+    <form>
+    Enter you username:
+    <input type="text" placeholder="Username..." class="userName"></input>
+    <br>
+    <br>
+    <input type="button" value="submit" class="submitButton"></input>
+    </form>
+
+
+
+</div>
+<div class="userOutput"></div>
+
+</body>
+
+
+
+
+    </html>
