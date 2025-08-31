@@ -4,7 +4,7 @@
 <script>
     window.addEventListener("load",start);
     function start(){
-        console.log("Hello World");
+        //console.log("Hello World");
 
         const submissionButton=document.getElementsByClassName("submitButton");
         for (const button of submissionButton){
@@ -13,6 +13,7 @@
     }
 
     function formSubmitted(){
+        var caps = "LAZY";
         const userOutput = document.getElementsByClassName("userOutput")[0];
         const user = document.getElementsByClassName("userName")[0].value;
         const userOutput1 = document.getElementsByClassName("userOutput1")[0];
@@ -20,32 +21,66 @@
         //userOutput.textContent= "Hello " + user + "!";
         //Check user name\
         capsCheck = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";//26 
-        
+        lowerCase = "abcdefghijklmnopqrstuvwxyz"
        
         CapsCheck(user,capsCheck);//this worked
+        console.log(caps+"!");
+    
+
+        
     }
 
 
 
 
     function CapsCheck(user,capsCheck){
-
+        var caps;
         const userOutput = document.getElementsByClassName("userOutput")[0]; //this needs to be here to show the result 
-
+        const errorOutput = document.getElementsByClassName("errorOutput")[0];
+        caps="false";
         for (let i = 0 ;i < capsCheck.length; i++)
         {   
             for ( let j=0;j < user.length; j++ )
             {      
                  if (user.charAt(j)===capsCheck.charAt(i))
                  {
+                    
                     result = user.charAt(j);
                     userOutput.textContent = result;
+                    errorOutput.textContent = "";
+                    //return capsCheck.charAt(i) ;
+                    caps="true";
                     break;
                 }
             }
+            
+            //console.log(caps);
+        }// this is a block 
+
+        if (caps === "false"){
+
+            console.log("no caps!!");
+            return caps;
+            
         }
 
+        if(caps === "true"){
+            console.log("Caps found!!");
+            return caps;
+        }
+        
+        
+
     }
+
+
+
+
+    //else {
+    //                result = "Need to enter a Capital letter!";
+    //                errorOutput.textContent = result;
+    //                userOutput.textContent = "";
+    //            }
 
 </script>
 
@@ -67,7 +102,7 @@
 
 </div>
 <div class="userOutput"></div>
-<div class="userOutput1"></div>
+<div class="errorOutput"></div>
 <div class="userOutput2"></div>
 
 </body>
