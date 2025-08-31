@@ -15,29 +15,37 @@
     function formSubmitted(){
         const userOutput = document.getElementsByClassName("userOutput")[0];
         const user = document.getElementsByClassName("userName")[0].value;
-
+        const userOutput1 = document.getElementsByClassName("userOutput1")[0];
+        const userOutput2 = document.getElementsByClassName("userOutput2")[0];
         //userOutput.textContent= "Hello " + user + "!";
         //Check user name\
         capsCheck = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";//26 
         
        
-
-        for (let i = 0 ;i < capsCheck.length; i++)
-        {
-            userOutput.textContent += capsCheck[i];
-            
-           //for ( ;j <user.length; j++ )
-           //{
-           //    if (user.length[j]==capsCheck.length[i]){
-           //        result = i;
-           //        break;
-           //    }
-           //}
-        }
-        //userOutput.textContent = result;
-        return 1;
+        CapsCheck(user,capsCheck);//this worked
     }
 
+
+
+
+    function CapsCheck(user,capsCheck){
+
+        const userOutput = document.getElementsByClassName("userOutput")[0]; //this needs to be here to show the result 
+
+        for (let i = 0 ;i < capsCheck.length; i++)
+        {   
+            for ( let j=0;j < user.length; j++ )
+            {      
+                 if (user.charAt(j)===capsCheck.charAt(i))
+                 {
+                    result = user.charAt(j);
+                    userOutput.textContent = result;
+                    break;
+                }
+            }
+        }
+
+    }
 
 </script>
 
@@ -59,6 +67,8 @@
 
 </div>
 <div class="userOutput"></div>
+<div class="userOutput1"></div>
+<div class="userOutput2"></div>
 
 </body>
 
