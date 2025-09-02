@@ -36,6 +36,14 @@ li{
     padding: 20px;
     
 }
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    text-decoration: none;
+    color: #FF0055;
+}
 
 .logo{
     
@@ -48,4 +56,24 @@ li{
     display: flex;
     justify-content: center;
      align-items: center;   
+}
+
+
+/*Signup form*/
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.container{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+.userOutput{
+    font-size: 30px;
 }
