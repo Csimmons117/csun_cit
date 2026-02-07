@@ -1,6 +1,6 @@
-```
-CIT425/LInfo System Security(Lab Assignment 1)
-```
+
+# CIT425/LInfo System Security(Lab Assignment 1)
+
 # Lab 1: Using Zenmap to Perform Basic Reconnaissance, Performing a
 
 # Vulnerability Assessment ( 10 0 Points)
